@@ -1,52 +1,24 @@
-# 🎨 E-Voting Platform - Version HTML/CSS/JavaScript
+# E-Voting Platform
 
-**Landing Page Moderne + Login** en HTML/CSS/JS pur
+<div align="center">
+  <img src="./images/logo.jpg" alt="E-Voting Platform Logo" width="200"/>
+</div>
 
+> **Alternative Open Source à Voteer & LegaVote**
 
-## ✨ Fonctionnalités
-
-### Landing Page (index.html)
-
-- ✅ **Hero section** avec CTA puissants
-- ✅ **6 fonctionnalités** en cards animées
-- ✅ **4 cas d'usage**
-- ✅ **Comparaison Open Source vs Propriétaire**
-- ✅ **CTA final** avec gradient
-- ✅ **Footer complet**
-- ✅ **Menu mobile** responsive
-- ✅ **Animations** au scroll
-- ✅ **100% responsive**
-
-### Page Login (login.html)
-
-- ✅ **Formulaire moderne** email + password
-- ✅ **2FA automatique** (si activé)
-- ✅ **Show/Hide password**
-- ✅ **Remember me**
-- ✅ **Error handling** élégant
-- ✅ **Loading states**
-- ✅ **Auto-submit** code 2FA (6 chiffres)
-- ✅ **Token persistence**
-- ✅ **Redirect** automatique
+Plateforme de vote électronique **fiable, simple & sécurisé**. Solution de vote en ligne 100% gratuite et open source avec authentification 2FA, gestion du quorum, intégrations Teams/Zoom et notifications temps réel.
 
 ---
 
-### Typographie
+## ✨ Points Clés
 
-- **Police**: Inter (Google Fonts)
-- **Icônes**: Font Awesome 6.4.0
-- **Tailles**:
-  - Hero: 4.5rem (72px)
-  - Section: 2.5rem (40px)
-  - Cards: 1.25rem (20px)
-
-### Responsive Breakpoints
-
-```
-Mobile:  < 480px
-Tablet:  480px - 1024px
-Desktop: > 1024px
-```
+- ✅ **100% Open Source** - Code source libre et transparent
+- 🆓 **Gratuit & Sans Limites** - Aucune restriction d'utilisation
+- 🔒 **Sécurité Enterprise** - Authentification 2FA et chiffrement
+- 🇫🇷 **Made in France** - Développé et maintenu en France
 
 ---
 
+## 👨‍💻 Auteur
+
+**Made by XRWeb**
