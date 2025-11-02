@@ -4,6 +4,8 @@
   <img src="./images/logo.jpg" alt="E-Voting Platform Logo" width="200"/>
 </div>
 
+---
+
 > **Alternative Open Source à Voteer & LegaVote**
 
 Plateforme de vote électronique **fiable, simple & sécurisé**. Solution de vote en ligne 100% gratuite et open source avec authentification 2FA, gestion du quorum, intégrations Teams/Zoom et notifications temps réel.
