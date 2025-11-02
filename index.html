@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.ico">
+    <meta name="description" content="E-Voting Platform - Plateforme de vote électronique gratuite, sécurisée et open source">
+    <meta name="keywords" content="vote électronique, vote en ligne, e-voting, scrutin, élection">
+    <title>E-Voting Platform - Vote Électronique Sécurisé</title>
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <a href="index.html" class="logo-link">
+                    <div class="logo">
+                        <img src="./images/logo-removebg.png" alt="E-Voting Platform Logo">
+                        <div class="logo-text">
+                            <h1>E-Voting Platform</h1>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">
+                        <i class="fas fa-star"></i>
+                        <span>Fonctionnalités</span>
+                    </a>
+                    <a href="#use-cases" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Cas d'usage</span>
+                    </a>
+                    <a href="#comparison" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Comparaison</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a href="./pages/login.html" class="btn-secondary">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Connexion</span>
+                    </a>
+                    <!--<a href="register.html" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        <span>Démarrer Gratuitement</span>
+                    </a>-->
+                    <a href="./pages/contact.html" class="btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="#features" class="mobile-link">
+                <i class="fas fa-star"></i>
+                <span>Fonctionnalités</span>
+            </a>
+            <a href="#use-cases" class="mobile-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Cas d'usage</span>
+            </a>
+            <a href="#comparison" class="mobile-link">
+                <i class="fas fa-chart-bar"></i>
+                <span>Comparaison</span>
+            </a>
+            <div class="mobile-menu-divider"></div>
+            <a href="login.html" class="mobile-link-button secondary">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Connexion</span>
+            </a>
+            <!--<a href="register.html" class="mobile-link-button primary">
+                <i class="fas fa-rocket"></i>
+                <span>Démarrer Gratuitement</span>
+            </a>-->
+            <a href="./pages/contact.html" class="mobile-link-button primary">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <!-- Badge -->
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Alternative Open Source à Voteer & LegaVote</span>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <!-- Title -->
+                <h1 class="hero-title">
+                    Le vote électronique<br>
+                    <span class="gradient-text">fiable, simple & sécurisé</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="hero-subtitle">
+                    Plateforme de vote en ligne <strong>100% gratuite</strong> et <strong>open source</strong> 
+                    avec authentification 2FA, gestion du quorum, intégrations Teams/Zoom 
+                    et notifications temps réel.
+                </p>
+
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <div class="badge">
+                        <i class="fas fa-code"></i>
+                        <span>100% Open Source</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-heart"></i>
+                        <span>Gratuit & Sans Limites</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Sécurité Enterprise</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-flag"></i>
+                        <span>Made in France</span>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta">
+                    <a href="register.html" class="btn-cta-primary">
+                        <span>Démarrer Gratuitement</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#features" class="btn-cta-secondary">
+                        Découvrir les fonctionnalités
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">30 000+</div>
+                        <div class="stat-label">Votants supportés</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Fonctionnalités complètes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">8.5/10</div>
+                        <div class="stat-label">Production Ready</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">0€</div>
+                        <div class="stat-label">Coût d'utilisation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pourquoi choisir E-Voting Platform ?</h2>
+                <p class="section-subtitle">
+                    Une solution complète qui va bien au-delà du simple vote en ligne. 
+                    Découvrez des fonctionnalités uniques sur le marché.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-color="blue">
+                    <div class="feature-icon blue">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="feature-title">Sécurité Maximum</h3>
+                    <p class="feature-description">
+                        2FA, chiffrement AES-256, audit trail complet. Vos votes sont protégés 
+                        selon les standards les plus stricts.
+                    </p>
+                </div>
+
+                <div class="feature-card" data-color="purple">
+                    <div class="feature-icon purple">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="feature-title">Notifications Temps Réel</h3>
+                    <p class="feature-description">
+                        WebSocket et Web Push pour alertes instantanées. Restez informé 
+                        de chaque étape du scrutin.
+                    </p>
+                </div>
+
+                <div class="feature-card" data-color="green">
+                    <div class="feature-icon green">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Gestion du Quorum</h3>
+                    <p class="feature-description">
+                        4 types de quorum avec suivi en temps réel. Validez automatiquement 
+                        vos élections selon vos règles.
+                    </p>
+                </div>
+
+                <div class="feature-card" data-color="red">
+                    <div class="feature-icon red">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="feature-title">Visioconférence Intégrée</h3>
+                    <p class="feature-description">
+                        Teams, Zoom, et plateformes personnalisées. Organisez vos AG 
+                        en ligne facilement.
+                    </p>
+                </div>
+
+                <div class="feature-card" data-color="orange">
+                    <div class="feature-icon orange">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="feature-title">Résultats Instantanés</h3>
+                    <p class="feature-description">
+                        Dépouillement automatique avec visualisations. Exportez en CSV, 
+                        Excel, PDF ou JSON.
+                    </p>
+                </div>
+
+                <div class="feature-card" data-color="indigo">
+                    <div class="feature-icon indigo">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Vote Secret & Transparent</h3>
+                    <p class="feature-description">
+                        Anonymat garanti ou vote nominatif selon vos besoins. Total contrôle 
+                        sur la confidentialité.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases" id="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pour tous types de scrutins</h2>
+                <p class="section-subtitle">
+                    De 10 à 30 000 votants, organisez vos élections en toute confiance
+                </p>
+            </div>
+
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="use-case-title">Assemblées Générales</h3>
+                    <p class="use-case-description">AG d'associations, copropriétés, syndicats</p>
+                </div>
+
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="use-case-title">Élections Internes</h3>
+                    <p class="use-case-description">Conseils d'administration, bureaux, comités</p>
+                </div>
+
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="use-case-title">Scrutins d'Entreprise</h3>
+                    <p class="use-case-description">CSE, votes stratégiques, consultations</p>
+                </div>
+
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="use-case-title">Organisations Publiques</h3>
+                    <p class="use-case-description">Universités, collectivités, ordres professionnels</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison" id="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pourquoi passer à l'open source ?</h2>
+                <p class="section-subtitle">Comparaison avec les solutions propriétaires</p>
+            </div>
+
+            <div class="comparison-box">
+                <div class="comparison-col">
+                    <h3 class="comparison-title">
+                        <i class="fas fa-check-circle"></i>
+                        E-Voting Platform (Vous)
+                    </h3>
+                    <ul class="comparison-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <strong>100% gratuit</strong> - Aucun coût d'utilisation
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <strong>Open source</strong> - Code transparent et auditable
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <strong>Auto-hébergeable</strong> - Contrôle total de vos données
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <strong>Personnalisable</strong> - Adaptez selon vos besoins
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <strong>Notifications temps réel</strong> - Unique sur le marché
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="comparison-col">
+                    <h3 class="comparison-title inactive">
+                        <i class="fas fa-file-alt"></i>
+                        Solutions Propriétaires
+                    </h3>
+                    <ul class="comparison-list inactive">
+                        <li>
+                            <i class="fas fa-times"></i>
+                            Abonnements coûteux (€€€)
+                        </li>
+                        <li>
+                            <i class="fas fa-times"></i>
+                            Code fermé - Boîte noire
+                        </li>
+                        <li>
+                            <i class="fas fa-times"></i>
+                            Dépendance au fournisseur
+                        </li>
+                        <li>
+                            <i class="fas fa-times"></i>
+                            Limitations de personnalisation
+                        </li>
+                        <li>
+                            <i class="fas fa-times"></i>
+                            Fonctionnalités limitées au plan
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-background"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Prêt à moderniser vos scrutins ?</h2>
+                <p class="cta-subtitle">
+                    Rejoignez les organisations qui ont fait confiance à l'open source 
+                    pour leurs élections. Déployez en quelques minutes.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn-cta-white">
+                        <span>Créer mon compte gratuit</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://github.com/your-repo" class="btn-cta-outline" target="_blank">
+                        <i class="fas fa-download"></i>
+                        <span>Télécharger le code</span>
+                    </a>
+                </div>
+
+                <p class="cta-note">
+                    ✅ Aucune carte bancaire requise • ✅ Déploiement en 3 jours • ✅ Support communautaire
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="./images/logo-removebg.png" alt="E-Voting Platform Logo">
+                    <h3>E-Voting Platform</h3>
+                    <p>Solution open source de vote électronique sécurisé, fiable et démocratique.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Produit</h4>
+                    <ul>
+                        <li><a href="#features">Fonctionnalités</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tarifs</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="#">Guide de démarrage</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Confidentialité</a></li>
+                        <li><a href="#">CGU</a></li>
+                        <li><a href="#">Sécurité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 E-Voting Platform. Licence MIT. Made by XRWeb</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="./main.js"></script>
+</body>
+</html>

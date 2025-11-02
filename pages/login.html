@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connexion - E-Voting Platform">
+    <title>Connexion - E-Voting Platform</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <!-- Background Pattern -->
+        <div class="login-background"></div>
+        
+        <!-- Login Box -->
+        <div class="login-box">
+            <!-- Logo/Header -->
+            <div class="login-header">
+                <a href="../index.html" class="login-logo">
+                    <div class="logo-img">
+                        <img src="../images/logo-removebg.png" alt="E-Voting Platform Logo">
+                    </div>
+                    <div class="logo-text">
+                        <h1>E-Voting Platform</h1>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Login Card -->
+            <div class="login-card">
+                <!-- Title -->
+                <div class="login-title">
+                    <h2 id="loginTitle">Connexion</h2>
+                    <p id="loginSubtitle">Accédez à votre espace de vote sécurisé</p>
+                </div>
+                
+                <!-- Error Alert -->
+                <div class="alert alert-error" id="errorAlert" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="errorMessage"></span>
+                </div>
+                
+                <!-- Login Form -->
+                <form id="loginForm">
+                    <!-- Email Field -->
+                    <div class="form-group" id="emailGroup">
+                        <label for="email">Email</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="votre@email.com" 
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+                    </div>
+                    
+                    <!-- Password Field -->
+                    <div class="form-group" id="passwordGroup">
+                        <label for="password">Mot de passe</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="••••••••" 
+                                required
+                                autocomplete="current-password"
+                            >
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 2FA Field (hidden by default) -->
+                    <div class="form-group" id="twoFactorGroup" style="display: none;">
+                        <label for="twoFactorCode">Code à 6 chiffres</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-shield-alt"></i>
+                            <input 
+                                type="text" 
+                                id="twoFactorCode" 
+                                name="twoFactorCode" 
+                                placeholder="000000" 
+                                maxlength="6"
+                                pattern="\d{6}"
+                                class="code-input"
+                                autocomplete="one-time-code"
+                            >
+                        </div>
+                        <p class="form-hint">
+                            Ouvrez votre application d'authentification (Google Authenticator, Authy, etc.)
+                        </p>
+                        <button type="button" class="btn-link" id="backToLogin">
+                            <i class="fas fa-arrow-left"></i> Retour à la connexion
+                        </button>
+                    </div>
+                    
+                    <!-- Remember & Forgot -->
+                    <div class="form-options" id="formOptions">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span>Se souvenir de moi</span>
+                        </label>
+                        <a href="forgot-password.html" class="link-primary">
+                            Mot de passe oublié ?
+                        </a>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit" id="submitButton">
+                        <span id="submitText">Se connecter</span>
+                        <i class="fas fa-arrow-right" id="submitIcon"></i>
+                        <i class="fas fa-spinner fa-spin" id="submitLoader" style="display: none;"></i>
+                    </button>
+                </form>
+                
+                <!-- Register Link -->
+                <div class="login-footer" id="registerLink">
+                    <p>
+                        Pas encore de compte ? 
+                        <a href="register.html" class="link-primary">
+                            Créer un compte gratuitement
+                        </a>
+                    </p>
+                </div>
+                
+                <!-- Security Badge -->
+                <div class="security-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Connexion sécurisée par chiffrement SSL/TLS</span>
+                </div>
+            </div>
+            
+            <!-- Back to Home -->
+            <div class="back-home">
+                <a href="../index.html">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Retour à l'accueil</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="../js/login.js"></script>
+</body>
+</html>

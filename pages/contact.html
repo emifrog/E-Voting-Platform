@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez l'équipe E-Voting Platform pour toute question ou demande de démonstration.">
+    <title>Contact - E-Voting Platform</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/logo-removebg.png">
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <a href="../index.html" class="logo-link">
+                    <div class="logo">
+                        <img src="../images/logo-removebg.png" alt="E-Voting Platform Logo">
+                        <div class="logo-text">
+                            <h1>E-Voting Platform</h1>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <a href="../index.html#features" class="nav-link">
+                        <i class="fas fa-star"></i>
+                        <span>Fonctionnalités</span>
+                    </a>
+                    <a href="../index.html#use-cases" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Cas d'usage</span>
+                    </a>
+                    <a href="../index.html#comparison" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Comparaison</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a href="./login.html" class="btn-secondary">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Connexion</span>
+                    </a>
+                    <a href="./contact.html" class="btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="../index.html#features" class="mobile-link">
+                <i class="fas fa-star"></i>
+                <span>Fonctionnalités</span>
+            </a>
+            <a href="../index.html#use-cases" class="mobile-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Cas d'usage</span>
+            </a>
+            <a href="../index.html#comparison" class="mobile-link">
+                <i class="fas fa-chart-bar"></i>
+                <span>Comparaison</span>
+            </a>
+            <div class="mobile-menu-divider"></div>
+            <a href="./login.html" class="mobile-link-button secondary">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Connexion</span>
+            </a>
+            <a href="./contact.html" class="mobile-link-button primary">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1 class="contact-title">Contactez-nous</h1>
+                <p class="contact-subtitle">
+                    Une question ? Besoin d'une démonstration ? Notre équipe est là pour vous accompagner.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Formulaire de contact -->
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h2>Envoyez-nous un message</h2>
+                        <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+                    </div>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">
+                                    <i class="fas fa-user"></i>
+                                    Prénom *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    required
+                                    placeholder="Votre prénom">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">
+                                    <i class="fas fa-user"></i>
+                                    Nom *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    required
+                                    placeholder="Votre nom">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i>
+                                    Email *
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required
+                                    placeholder="votre.email@exemple.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">
+                                    <i class="fas fa-phone"></i>
+                                    Téléphone
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone"
+                                    placeholder="+33 6 12 34 56 78">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">
+                                <i class="fas fa-building"></i>
+                                Organisation
+                            </label>
+                            <input 
+                                type="text" 
+                                id="company" 
+                                name="company"
+                                placeholder="Nom de votre organisation">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i>
+                                Sujet *
+                            </label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="demo">Demande de démonstration</option>
+                                <option value="info">Demande d'information</option>
+                                <option value="support">Support technique</option>
+                                <option value="partnership">Partenariat</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment"></i>
+                                Message *
+                            </label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="6" 
+                                required
+                                placeholder="Décrivez votre demande en détail..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <span class="checkbox-text">
+                                    J'accepte que mes données soient utilisées pour traiter ma demande. *
+                                </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Envoyer le message</span>
+                        </button>
+                        <!--<img class="logo-contact" src="../images/logo-removebg.png" alt="E-Voting Platform Logo">-->
+                    </form>
+                </div>
+
+                <!-- Informations de contact -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>contact@e-voting-platform.fr</p>
+                        <a href="mailto:contact@e-voting-platform.fr" class="info-link">
+                            Nous écrire
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Téléphone</h3>
+                        <p>+33 1 23 45 67 89</p>
+                        <a href="tel:+33123456789" class="info-link">
+                            Nous appeler
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Adresse</h3>
+                        <p>123 Avenue de la République<br>75011 Paris, France</p>
+                        <a href="https://maps.google.com" target="_blank" class="info-link">
+                            Voir sur la carte
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Horaires</h3>
+                        <p>Lundi - Vendredi<br>9h00 - 18h00</p>
+                    </div>
+
+                    <!--<div class="social-links">
+                        <h3>Suivez-nous</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq">
+        <div class="container">
+            <div class="faq-header">
+                <h2>Questions fréquentes</h2>
+                <p>Trouvez rapidement des réponses aux questions les plus courantes</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quel est le délai de réponse ?</h3>
+                    <p>Nous répondons généralement sous 24h ouvrées.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3>Comment demander une démo ?</h3>
+                    <p>Sélectionnez "Demande de démonstration" dans le formulaire ci-dessus.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Support technique disponible ?</h3>
+                    <p>Oui, notre équipe technique est disponible du lundi au vendredi.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-icon">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h3>La plateforme est-elle gratuite ?</h3>
+                    <p>Oui, E-Voting Platform est 100% gratuite et open source.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/logo-removebg.png" alt="E-Voting Platform">
+                        <h3>E-Voting Platform</h3>
+                    </div>
+                    <p class="footer-description">
+                        Solution de vote électronique 100% gratuite et open source.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="../index.html#features">Fonctionnalités</a></li>
+                        <li><a href="../index.html#use-cases">Cas d'usage</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">CGU</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            contact@e-voting-platform.fr
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            +33 1 23 45 67 89
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 E-Voting Platform. Tous droits réservés.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="../main.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>
