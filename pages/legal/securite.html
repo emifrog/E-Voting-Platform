@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../images/favicon.ico">
+    <meta name="description" content="Sécurité et conformité de E-Voting Platform - Chiffrement AES-256, 2FA, RGPD, OWASP">
+    <meta name="keywords" content="sécurité vote électronique, chiffrement, 2FA, RGPD, OWASP, audit">
+    <title>Sécurité & Conformité - E-Voting Platform</title>
+
+    <!-- Open Graph (partage social) -->
+    <meta property="og:title" content="Sécurité & Conformité - E-Voting Platform">
+    <meta property="og:description" content="Découvrez nos mesures de sécurité : chiffrement AES-256, 2FA, conformité RGPD">
+    <meta property="og:image" content="../../images/logo-removebg.png">
+    <meta property="og:url" content="https://e-voting.app">
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <a href="../../index.html" class="logo-link">
+                    <div class="logo">
+                        <img src="../../images/logo-removebg.png" alt="E-Voting Platform Logo">
+                        <div class="logo-text">
+                            <h1>E-Voting Platform</h1>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <a href="../../index.html#features" class="nav-link">
+                        <i class="fas fa-star"></i>
+                        <span>Fonctionnalités</span>
+                    </a>
+                    <a href="../../index.html#use-cases" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Cas d'usage</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a href="../login.html" class="btn-secondary">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Connexion</span>
+                    </a>
+                    <a href="../contact.html" class="btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="../../index.html#features" class="mobile-link">
+                <i class="fas fa-star"></i>
+                <span>Fonctionnalités</span>
+            </a>
+            <a href="../../index.html#use-cases" class="mobile-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Cas d'usage</span>
+            </a>
+            <div class="mobile-menu-divider"></div>
+            <a href="../login.html" class="mobile-link-button secondary">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Connexion</span>
+            </a>
+            <a href="../contact.html" class="mobile-link-button primary">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Security Content -->
+    <div class="legal-container">
+        <a href="../../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Retour à l'accueil
+        </a>
+
+        <div class="legal-header">
+            <h1>🔒 Sécurité & Conformité</h1>
+            <p class="update-date">
+                La sécurité de vos votes est notre priorité absolue. Découvrez nos mesures 
+                de protection et nos certifications.
+            </p>
+        </div>
+
+        <!-- Security Badges Grid -->
+        <div class="legal-content" style="margin-bottom: 40px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 40px;">
+                <div style="text-align: center; padding: 32px 24px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 12px; color: white;">
+                    <i class="fas fa-lock" style="font-size: 3rem; margin-bottom: 16px; opacity: 0.9;"></i>
+                    <h3 style="font-size: 1.25rem !important; font-weight: 700 !important; color: white !important; margin-bottom: 8px !important;">Chiffrement AES-256</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9) !important; font-size: 0.95rem !important; margin: 0 !important;">Standard militaire pour la protection de tous vos votes</p>
+                </div>
+
+                <div style="text-align: center; padding: 32px 24px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px; color: white;">
+                    <i class="fas fa-mobile-alt" style="font-size: 3rem; margin-bottom: 16px; opacity: 0.9;"></i>
+                    <h3 style="font-size: 1.25rem !important; font-weight: 700 !important; color: white !important; margin-bottom: 8px !important;">Authentification 2FA</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9) !important; font-size: 0.95rem !important; margin: 0 !important;">TOTP compatible Google Authenticator & Authy</p>
+                </div>
+
+                <div style="text-align: center; padding: 32px 24px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 12px; color: white;">
+                    <i class="fas fa-clipboard-list" style="font-size: 3rem; margin-bottom: 16px; opacity: 0.9;"></i>
+                    <h3 style="font-size: 1.25rem !important; font-weight: 700 !important; color: white !important; margin-bottom: 8px !important;">Audit Trail Complet</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9) !important; font-size: 0.95rem !important; margin: 0 !important;">Toutes les actions enregistrées et traçables</p>
+                </div>
+
+                <div style="text-align: center; padding: 32px 24px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 12px; color: white;">
+                    <i class="fas fa-shield-alt" style="font-size: 3rem; margin-bottom: 16px; opacity: 0.9;"></i>
+                    <h3 style="font-size: 1.25rem !important; font-weight: 700 !important; color: white !important; margin-bottom: 8px !important;">Conformité RGPD</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9) !important; font-size: 0.95rem !important; margin: 0 !important;">Contrôle total de vos données personnelles</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infrastructure Security -->
+        <div class="legal-content" style="margin-bottom: 40px;">
+            <section class="legal-section">
+                <h2>
+                    <i class="fas fa-server"></i>
+                    Infrastructure & Chiffrement
+                </h2>
+                <p>
+                    Notre plateforme utilise les technologies de chiffrement les plus avancées pour garantir 
+                    la confidentialité et l'intégrité de vos scrutins.
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0;">
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <h4 style="font-size: 1.125rem !important; font-weight: 600 !important; color: #1e293b !important; margin-bottom: 8px !important; display: flex !important; align-items: center !important; gap: 8px !important;">
+                            <i class="fas fa-key" style="color: #3b82f6;"></i>
+                            Chiffrement de bout en bout
+                        </h4>
+                        <p style="color: #64748b !important; font-size: 0.95rem !important; margin: 0 !important;">AES-256 pour toutes les données sensibles (votes, identités, résultats)</p>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <h4 style="font-size: 1.125rem !important; font-weight: 600 !important; color: #1e293b !important; margin-bottom: 8px !important; display: flex !important; align-items: center !important; gap: 8px !important;">
+                            <i class="fas fa-certificate" style="color: #3b82f6;"></i>
+                            HTTPS obligatoire
+                        </h4>
+                        <p style="color: #64748b !important; font-size: 0.95rem !important; margin: 0 !important;">TLS 1.3 avec certificats SSL pour toutes les communications</p>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <h4 style="font-size: 1.125rem !important; font-weight: 600 !important; color: #1e293b !important; margin-bottom: 8px !important; display: flex !important; align-items: center !important; gap: 8px !important;">
+                            <i class="fas fa-database" style="color: #3b82f6;"></i>
+                            Base de données sécurisée
+                        </h4>
+                        <p style="color: #64748b !important; font-size: 0.95rem !important; margin: 0 !important;">Chiffrement au repos et en transit, sauvegardes chiffrées</p>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <h4 style="font-size: 1.125rem !important; font-weight: 600 !important; color: #1e293b !important; margin-bottom: 8px !important; display: flex !important; align-items: center !important; gap: 8px !important;">
+                            <i class="fas fa-user-secret" style="color: #3b82f6;"></i>
+                            Anonymisation des votes
+                        </h4>
+                        <p style="color: #64748b !important; font-size: 0.95rem !important; margin: 0 !important;">Séparation totale entre identité et vote pour le secret du scrutin</p>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <h4 style="font-size: 1.125rem !important; font-weight: 600 !important; color: #1e293b !important; margin-bottom: 8px !important; display: flex !important; align-items: center !important; gap: 8px !important;">
+                            <i class="fas fa-random" style="color: #3b82f6;"></i>
+                            Tokens sécurisés
+                        </h4>
+                        <p style="color: #64748b !important; font-size: 0.95rem !important; margin: 0 !important;">Génération cryptographique aléatoire, tokens à usage unique</p>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <h4 style="font-size: 1.125rem !important; font-weight: 600 !important; color: #1e293b !important; margin-bottom: 8px !important; display: flex !important; align-items: center !important; gap: 8px !important;">
+                            <i class="fas fa-clock" style="color: #3b82f6;"></i>
+                            Sessions sécurisées
+                        </h4>
+                        <p style="color: #64748b !important; font-size: 0.95rem !important; margin: 0 !important;">Expiration automatique, rotation des tokens, protection CSRF</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Authentication -->
+        <div class="legal-content" style="margin-bottom: 40px;">
+            <section class="legal-section">
+                <h2>
+                    <i class="fas fa-user-lock"></i>
+                    Authentification & Contrôle d'accès
+                </h2>
+                <p>
+                    Système d'authentification multi-niveaux pour protéger l'accès à votre plateforme 
+                    et garantir que seules les personnes autorisées peuvent voter.
+                </p>
+
+                <ul>
+                    <li>Authentification à deux facteurs (2FA/TOTP) pour tous les administrateurs</li>
+                    <li>Politique de mots de passe robuste (longueur, complexité, historique)</li>
+                    <li>Rate limiting intelligent pour prévenir les attaques par force brute</li>
+                    <li>Verrouillage automatique des comptes après tentatives échouées</li>
+                    <li>Gestion granulaire des rôles et permissions (RBAC)</li>
+                    <li>Journalisation de toutes les tentatives de connexion</li>
+                    <li>Détection des connexions suspectes et alertes en temps réel</li>
+                    <li>Support de l'authentification unique (SSO) via OAuth 2.0</li>
+                </ul>
+
+                <div class="info-box" style="background: #fef3c7; border-left-color: #f59e0b;">
+                    <p style="color: #78350f !important; display: flex; align-items: start; gap: 12px;">
+                        <i class="fas fa-exclamation-triangle" style="color: #f59e0b; font-size: 1.25rem; margin-top: 2px;"></i>
+                        <span><strong style="color: #92400e;">Recommandation :</strong> Nous recommandons fortement l'activation du 2FA pour tous les comptes administrateurs. Cette mesure réduit de 99% les risques de compromission.</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- OWASP & Standards -->
+        <div class="legal-content" style="margin-bottom: 40px;">
+            <section class="legal-section">
+                <h2>
+                    <i class="fas fa-bug"></i>
+                    Protection contre les vulnérabilités
+                </h2>
+                <p>
+                    Notre plateforme respecte les standards OWASP Top 10 et implémente les meilleures 
+                    pratiques de sécurité applicative.
+                </p>
+
+                <h3>Standards OWASP respectés</h3>
+                <ul>
+                    <li>Protection contre les injections SQL (requêtes paramétrées, ORM sécurisé)</li>
+                    <li>Prévention des attaques XSS (Cross-Site Scripting) avec sanitization</li>
+                    <li>Protection CSRF (Cross-Site Request Forgery) avec tokens</li>
+                    <li>Gestion sécurisée des sessions et authentification</li>
+                    <li>Contrôle d'accès robuste et validation des permissions</li>
+                    <li>Configuration sécurisée par défaut (principe du moindre privilège)</li>
+                    <li>Protection contre les attaques par déni de service (DoS)</li>
+                    <li>Validation et sanitization de toutes les entrées utilisateur</li>
+                    <li>Gestion sécurisée des erreurs (pas de fuite d'information)</li>
+                    <li>Mise à jour régulière des dépendances et correctifs de sécurité</li>
+                </ul>
+
+                <h3>Mesures de protection supplémentaires</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0;">
+                    <div style="background: #f8fafc; padding: 16px; border-radius: 8px;">
+                        <p style="margin: 0 !important; font-weight: 600 !important; color: #1e293b !important;"><i class="fas fa-tachometer-alt" style="color: #3b82f6; margin-right: 8px;"></i>Rate Limiting</p>
+                        <p style="font-size: 0.9rem !important; color: #64748b !important; margin: 8px 0 0 0 !important;">Limitation multi-niveaux pour prévenir les abus</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 16px; border-radius: 8px;">
+                        <p style="margin: 0 !important; font-weight: 600 !important; color: #1e293b !important;"><i class="fas fa-shield-virus" style="color: #3b82f6; margin-right: 8px;"></i>WAF intégré</p>
+                        <p style="font-size: 0.9rem !important; color: #64748b !important; margin: 8px 0 0 0 !important;">Pare-feu applicatif pour bloquer les menaces</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 16px; border-radius: 8px;">
+                        <p style="margin: 0 !important; font-weight: 600 !important; color: #1e293b !important;"><i class="fas fa-file-code" style="color: #3b82f6; margin-right: 8px;"></i>CSP Headers</p>
+                        <p style="font-size: 0.9rem !important; color: #64748b !important; margin: 8px 0 0 0 !important;">Headers de sécurité stricts (CSP, HSTS)</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 16px; border-radius: 8px;">
+                        <p style="margin: 0 !important; font-weight: 600 !important; color: #1e293b !important;"><i class="fas fa-ban" style="color: #3b82f6; margin-right: 8px;"></i>Protection DDoS</p>
+                        <p style="font-size: 0.9rem !important; color: #64748b !important; margin: 8px 0 0 0 !important;">Détection et mitigation automatique</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Compliance -->
+        <div class="legal-content" style="margin-bottom: 40px;">
+            <section class="legal-section">
+                <h2>
+                    <i class="fas fa-balance-scale"></i>
+                    Conformité réglementaire
+                </h2>
+                <p>
+                    E-Voting Platform respecte les principales réglementations en matière de protection 
+                    des données et de sécurité.
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 32px 0;">
+                    <div style="text-align: center; padding: 24px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                        <i class="fas fa-user-shield" style="font-size: 2.5rem; margin-bottom: 12px; opacity: 0.9;"></i>
+                        <h4 style="font-size: 1.125rem !important; font-weight: 700 !important; color: white !important; margin-bottom: 8px !important;">RGPD</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9) !important; font-size: 0.9rem !important; margin: 0 !important;">Conformité totale au RGPD</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 24px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                        <i class="fas fa-gavel" style="font-size: 2.5rem; margin-bottom: 12px; opacity: 0.9;"></i>
+                        <h4 style="font-size: 1.125rem !important; font-weight: 700 !important; color: white !important; margin-bottom: 8px !important;">Loi Informatique</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9) !important; font-size: 0.9rem !important; margin: 0 !important;">Respect de la législation française</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 24px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                        <i class="fas fa-lock" style="font-size: 2.5rem; margin-bottom: 12px; opacity: 0.9;"></i>
+                        <h4 style="font-size: 1.125rem !important; font-weight: 700 !important; color: white !important; margin-bottom: 8px !important;">ISO 27001</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9) !important; font-size: 0.9rem !important; margin: 0 !important;">Standards de sécurité IT</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 24px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                        <i class="fas fa-vote-yea" style="font-size: 2.5rem; margin-bottom: 12px; opacity: 0.9;"></i>
+                        <h4 style="font-size: 1.125rem !important; font-weight: 700 !important; color: white !important; margin-bottom: 8px !important;">Code Électoral</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9) !important; font-size: 0.9rem !important; margin: 0 !important;">Principes démocratiques du vote</p>
+                    </div>
+                </div>
+
+                <h3>Droits des utilisateurs (RGPD)</h3>
+                <ul>
+                    <li>Droit d'accès à vos données personnelles</li>
+                    <li>Droit de rectification et de mise à jour</li>
+                    <li>Droit à l'effacement ("droit à l'oubli")</li>
+                    <li>Droit à la portabilité des données</li>
+                    <li>Droit d'opposition au traitement</li>
+                    <li>Droit à la limitation du traitement</li>
+                    <li>Notification des violations de données sous 72h</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Audit & Monitoring -->
+        <div class="legal-content" style="margin-bottom: 40px;">
+            <section class="legal-section">
+                <h2>
+                    <i class="fas fa-chart-line"></i>
+                    Audit & Surveillance
+                </h2>
+                <p>
+                    Traçabilité complète de toutes les opérations pour garantir la transparence 
+                    et faciliter les audits.
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 32px 0;">
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #10b981;">
+                        <h4 style="font-size: 1.125rem !important; font-weight: 600 !important; color: #1e293b !important; margin-bottom: 8px !important;">
+                            <i class="fas fa-history" style="color: #10b981; margin-right: 8px;"></i>
+                            Logs détaillés
+                        </h4>
+                        <p style="color: #64748b !important; font-size: 0.95rem !important; margin: 0 !important;">Enregistrement horodaté de toutes les actions</p>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #10b981;">
+                        <h4 style="font-size: 1.125rem !important; font-weight: 600 !important; color: #1e293b !important; margin-bottom: 8px !important;">
+                            <i class="fas fa-eye" style="color: #10b981; margin-right: 8px;"></i>
+                            Monitoring temps réel
+                        </h4>
+                        <p style="color: #64748b !important; font-size: 0.95rem !important; margin: 0 !important;">Surveillance continue des activités suspectes</p>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #10b981;">
+                        <h4 style="font-size: 1.125rem !important; font-weight: 600 !important; color: #1e293b !important; margin-bottom: 8px !important;">
+                            <i class="fas fa-bell" style="color: #10b981; margin-right: 8px;"></i>
+                            Alertes automatiques
+                        </h4>
+                        <p style="color: #64748b !important; font-size: 0.95rem !important; margin: 0 !important;">Notifications instantanées d'événements de sécurité</p>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #10b981;">
+                        <h4 style="font-size: 1.125rem !important; font-weight: 600 !important; color: #1e293b !important; margin-bottom: 8px !important;">
+                            <i class="fas fa-file-export" style="color: #10b981; margin-right: 8px;"></i>
+                            Rapports d'audit
+                        </h4>
+                        <p style="color: #64748b !important; font-size: 0.95rem !important; margin: 0 !important;">Génération de rapports complets pour conformité</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Open Source Security -->
+        <div class="legal-content" style="margin-bottom: 40px;">
+            <section class="legal-section">
+                <h2>
+                    <i class="fas fa-code"></i>
+                    Sécurité Open Source
+                </h2>
+                <p>
+                    L'approche open source offre des avantages uniques en matière de sécurité et de transparence.
+                </p>
+
+                <ul>
+                    <li>Code source public et auditable par tous</li>
+                    <li>Revue par la communauté de sécurité mondiale</li>
+                    <li>Corrections rapides des vulnérabilités découvertes</li>
+                    <li>Transparence totale sur les mécanismes de sécurité</li>
+                    <li>Pas de portes dérobées ou de fonctionnalités cachées</li>
+                    <li>Possibilité d'audit indépendant par des experts</li>
+                    <li>Amélioration continue grâce aux contributions</li>
+                </ul>
+
+                <div class="info-box">
+                    <p style="display: flex; align-items: start; gap: 12px;">
+                        <i class="fas fa-info-circle" style="color: #3b82f6; font-size: 1.25rem; margin-top: 2px;"></i>
+                        <span><strong>Principe de Kerckhoffs :</strong> La sécurité d'un système ne doit pas reposer sur le secret de son implémentation, mais uniquement sur le secret des clés. Notre approche open source respecte ce principe fondamental de la cryptographie.</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="contact-card">
+            <h3>Des questions sur notre sécurité ?</h3>
+            <p>Notre équipe est à votre disposition pour discuter de vos besoins spécifiques en matière de sécurité</p>
+            <a href="../contact.html">
+                <i class="fas fa-envelope"></i>
+                Nous contacter
+            </a>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="../../images/logo-removebg.png" alt="E-Voting Platform Logo">
+                    <h3>E-Voting Platform</h3>
+                    <p>Solution open source de vote électronique sécurisé, fiable et démocratique.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Produit</h4>
+                    <ul>
+                        <li><a href="../../index.html#features">Fonctionnalités</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tarifs</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="#">Guide de démarrage</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="./mentions-légales.html">Mentions légales</a></li>
+                        <li><a href="./politique-confidentialite.html">Confidentialité</a></li>
+                        <li><a href="./cgu.html">CGU</a></li>
+                        <li><a href="./securite.html">Sécurité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 E-Voting Platform. Licence MIT. Made by XRWeb</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="../../main.js"></script>
+</body>
+</html>
