@@ -40,4 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial calculation
     calculatePrices();
+
+    // Format numbers with spaces for better readability
+    function formatPrice(price) {
+        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+
+    // Modifier les lignes d'affichage :
+    evotingPrice.textContent = formatPrice(evotingTotal) + ' €';
+    voteerPrice.textContent = formatPrice(voteerTotal) + ' €';
+    savings.textContent = formatPrice(savingsAmount) + ' €';
 });
