@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-Voting Platform - Plateforme de vote électronique gratuite, sécurisée et open source">
+    <title>E-Voting Platform - Vote Électronique 100% Gratuit & Open Source</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================
+           NEO-BRUTALISM THEME & GLOBAL STYLES
+           ========================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Colors */
+            --color-background: #FFFFFF;
+            --color-foreground: #000000;
+            --color-primary: #FF6B35;
+            --color-primary-dark: #E85A2A;
+            --color-secondary: #D4FF00;
+            --color-secondary-dark: #BBDD00;
+            --color-accent: #7B2CBF;
+            --color-accent-dark: #6622A0;
+            --color-tertiary: #FF006E;
+            --color-success: #00FF88;
+            --color-warning: #FFD60A;
+            --color-muted: #F5F5F5;
+            --color-muted-dark: #E0E0E0;
+
+            /* Typography */
+            --font-sans: 'DM Sans', -apple-system, sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 0.75rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            --spacing-4xl: 6rem;
+
+            /* Borders */
+            --border-width: 4px;
+            --border-width-thick: 6px;
+
+            /* Shadows */
+            --shadow-sm: 4px 4px 0px 0px #000000;
+            --shadow-md: 6px 6px 0px 0px #000000;
+            --shadow-lg: 8px 8px 0px 0px #000000;
+            --shadow-xl: 10px 10px 0px 0px #000000;
+            --shadow-2xl: 12px 12px 0px 0px #000000;
+
+            /* Transitions */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-background);
+            color: var(--color-foreground);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* ==========================================
+           NAVIGATION
+           ========================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--color-background);
+            border-bottom: var(--border-width) solid var(--color-foreground);
+            transition: var(--transition-base);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+            color: var(--color-foreground);
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            border: var(--border-width) solid var(--color-foreground);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--color-background);
+            transition: var(--transition-bounce);
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(-5deg) scale(1.05);
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--color-foreground);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 2px solid transparent;
+            transition: var(--transition-fast);
+        }
+
+        .nav-link:hover {
+            border-bottom: 2px solid var(--color-foreground);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: var(--border-width) solid var(--color-foreground);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            position: relative;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-background);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:active {
+            transform: translate(2px, 2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary {
+            background: var(--color-background);
+            color: var(--color-foreground);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-muted);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+
+        .mobile-menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--color-foreground);
+            transition: var(--transition-base);
+        }
+
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+
+        .hero {
+            padding: var(--spacing-4xl) 0;
+            background:
+                linear-gradient(45deg, var(--color-background) 25%, transparent 25%),
+                linear-gradient(-45deg, var(--color-background) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, var(--color-background) 75%),
+                linear-gradient(-45deg, transparent 75%, var(--color-background) 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+            background-color: var(--color-muted);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-3xl);
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: slideInLeft 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            background: var(--color-warning);
+            color: var(--color-foreground);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: var(--border-width) solid var(--color-foreground);
+            box-shadow: var(--shadow-sm);
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-xl);
+            animation: fadeInDown 0.6s ease-out 0.1s backwards;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-lg);
+            letter-spacing: -0.02em;
+            animation: fadeInDown 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s backwards;
+        }
+
+        .hero-title .highlight {
+            display: block;
+            background: var(--color-primary);
+            color: var(--color-background);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: var(--border-width) solid var(--color-foreground);
+            box-shadow: var(--shadow-md);
+            margin-top: var(--spacing-md);
+            transform: rotate(-1deg);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-xl);
+            animation: fadeInUp 0.6s ease-out 0.3s backwards;
+        }
+
+        .hero-subtitle strong {
+            background: var(--color-secondary);
+            padding: 2px 6px;
+            border: 2px solid var(--color-foreground);
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+            animation: fadeInUp 0.6s ease-out 0.4s backwards;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            background: var(--color-background);
+            border: var(--border-width) solid var(--color-foreground);
+            padding: var(--spacing-sm) var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: var(--transition-bounce);
+        }
+
+        .badge:hover {
+            transform: rotate(-2deg) translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-2xl);
+            animation: scaleIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s backwards;
+        }
+
+        .btn-cta {
+            padding: var(--spacing-md) var(--spacing-xl);
+            font-size: 1.125rem;
+        }
+
+        .hero-mockup {
+            position: relative;
+            animation: slideInRight 0.8s ease-out 0.3s backwards;
+        }
+
+        .mockup-container {
+            background: var(--color-background);
+            border: var(--border-width-thick) solid var(--color-foreground);
+            box-shadow: var(--shadow-2xl);
+            padding: var(--spacing-md);
+            transform: rotate(2deg);
+            transition: var(--transition-base);
+        }
+
+        .mockup-container:hover {
+            transform: rotate(0deg) scale(1.02);
+            box-shadow:
+                12px 12px 0px 0px var(--color-primary),
+                16px 16px 0px 0px var(--color-foreground);
+        }
+
+        .mockup-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: linear-gradient(135deg, var(--color-muted) 0%, var(--color-muted-dark) 100%);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        /* ==========================================
+           STATS BAR
+           ========================================== */
+
+        .stats-bar {
+            background: var(--color-secondary);
+            border-top: var(--border-width) solid var(--color-foreground);
+            border-bottom: var(--border-width) solid var(--color-foreground);
+            padding: var(--spacing-xl) 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-2xl);
+            text-align: center;
+        }
+
+        .stat {
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .stat:nth-child(1) { animation-delay: 0.1s; }
+        .stat:nth-child(2) { animation-delay: 0.2s; }
+        .stat:nth-child(3) { animation-delay: 0.3s; }
+        .stat:nth-child(4) { animation-delay: 0.4s; }
+
+        .stat-number {
+            font-family: var(--font-mono);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ==========================================
+           FEATURES SECTION
+           ========================================== */
+
+        .features {
+            padding: var(--spacing-4xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--color-primary);
+            border: 2px solid var(--color-foreground);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: #333;
+            max-width: 600px;
+            margin: var(--spacing-lg) auto 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .feature-card {
+            background: var(--color-background);
+            border: var(--border-width) solid var(--color-foreground);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .feature-card.visible {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .feature-card:hover {
+            transform: translateY(-8px) rotate(-1deg);
+            box-shadow:
+                8px 8px 0px 0px var(--color-primary),
+                12px 12px 0px 0px var(--color-foreground);
+        }
+
+        .feature-card:nth-child(2):hover { box-shadow: 8px 8px 0px 0px var(--color-accent), 12px 12px 0px 0px var(--color-foreground); }
+        .feature-card:nth-child(3):hover { box-shadow: 8px 8px 0px 0px var(--color-success), 12px 12px 0px 0px var(--color-foreground); }
+        .feature-card:nth-child(4):hover { box-shadow: 8px 8px 0px 0px var(--color-tertiary), 12px 12px 0px 0px var(--color-foreground); }
+        .feature-card:nth-child(5):hover { box-shadow: 8px 8px 0px 0px var(--color-warning), 12px 12px 0px 0px var(--color-foreground); }
+        .feature-card:nth-child(6):hover { box-shadow: 8px 8px 0px 0px var(--color-secondary), 12px 12px 0px 0px var(--color-foreground); }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: var(--color-primary);
+            color: var(--color-background);
+            border: var(--border-width) solid var(--color-foreground);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-card:nth-child(2) .feature-icon { background: var(--color-accent); }
+        .feature-card:nth-child(3) .feature-icon { background: var(--color-success); color: var(--color-foreground); }
+        .feature-card:nth-child(4) .feature-icon { background: var(--color-tertiary); }
+        .feature-card:nth-child(5) .feature-icon { background: var(--color-warning); color: var(--color-foreground); }
+        .feature-card:nth-child(6) .feature-icon { background: var(--color-secondary); color: var(--color-foreground); }
+
+        .feature-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            text-transform: uppercase;
+        }
+
+        .feature-description {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        /* ==========================================
+           TESTIMONIALS
+           ========================================== */
+
+        .testimonials {
+            padding: var(--spacing-4xl) 0;
+            background: var(--color-muted);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .testimonial-card {
+            background: var(--color-background);
+            border: var(--border-width) solid var(--color-foreground);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .testimonial-quote {
+            font-size: 1.125rem;
+            font-style: italic;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            border: var(--border-width) solid var(--color-foreground);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: var(--color-background);
+        }
+
+        .author-info strong {
+            display: block;
+            font-weight: 700;
+        }
+
+        .author-info span {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+        }
+
+        .proof-badge {
+            background: var(--color-background);
+            border: var(--border-width) solid var(--color-foreground);
+            padding: var(--spacing-md) var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-weight: 700;
+        }
+
+        /* ==========================================
+           COMPARISON
+           ========================================== */
+
+        .comparison {
+            padding: var(--spacing-4xl) 0;
+        }
+
+        .comparison-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        .comparison-col {
+            border: var(--border-width) solid var(--color-foreground);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .comparison-col.winner {
+            background: var(--color-success);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .comparison-col.loser {
+            background: var(--color-muted);
+            opacity: 0.9;
+        }
+
+        .comparison-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+
+        .comparison-list .fa-check {
+            color: var(--color-foreground);
+            font-size: 1.25rem;
+        }
+
+        .comparison-list .fa-times {
+            color: #666;
+            font-size: 1.25rem;
+        }
+
+        /* ==========================================
+           CTA SECTION
+           ========================================== */
+
+        .cta-section {
+            padding: var(--spacing-4xl) 0;
+            background: var(--color-accent);
+            border-top: var(--border-width) solid var(--color-foreground);
+            border-bottom: var(--border-width) solid var(--color-foreground);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.1) 10px, rgba(0,0,0,0.1) 20px);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--color-background);
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.1;
+        }
+
+        .cta-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-2xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .btn-cta-white {
+            background: var(--color-background);
+            color: var(--color-foreground);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-cta-white:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .cta-note {
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+
+        .footer {
+            background: var(--color-foreground);
+            color: var(--color-background);
+            padding: var(--spacing-3xl) 0 var(--spacing-xl);
+            border-top: var(--border-width) solid var(--color-foreground);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .footer-col h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-col h4 {
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-md);
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-col a {
+            color: var(--color-background);
+            text-decoration: none;
+            transition: var(--transition-fast);
+            display: inline-block;
+        }
+
+        .footer-col a:hover {
+            transform: translateX(4px);
+            color: var(--color-secondary);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            padding-top: var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--color-background);
+            color: var(--color-foreground);
+            border: 2px solid var(--color-background);
+            transition: var(--transition-bounce);
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-4px) rotate(-5deg);
+            background: var(--color-secondary);
+        }
+
+        /* ==========================================
+           ANIMATIONS
+           ========================================== */
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ==========================================
+           RESPONSIVE
+           ========================================== */
+
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-col.winner {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">E</div>
+                    <span class="logo-text">E-Voting Platform</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">Fonctionnalités</a>
+                    <a href="#testimonials" class="nav-link">Témoignages</a>
+                    <a href="#comparison" class="nav-link">Comparaison</a>
+                    <a href="../pages/login.html" class="btn btn-secondary">Connexion</a>
+                    <a href="../pages/contact.html" class="btn btn-primary">
+                        <span>Démarrer</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Alternative Open Source</span>
+                        <i class="fas fa-star"></i>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Le vote électronique
+                        <span class="highlight">100% Gratuit & Sécurisé</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Plateforme de vote en ligne <strong>100% gratuite</strong> et <strong>open source</strong>
+                        avec authentification 2FA, gestion du quorum, intégrations Teams/Zoom
+                        et notifications temps réel.
+                    </p>
+
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <i class="fas fa-code"></i>
+                            <span>Open Source</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-heart"></i>
+                            <span>100% Gratuit</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>2FA Sécurisé</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-flag"></i>
+                            <span>Made in France</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#" class="btn btn-primary btn-cta">
+                            <span>Démarrer Gratuitement</span>
+                            <i class="fas fa-rocket"></i>
+                        </a>
+                        <a href="#features" class="btn btn-secondary btn-cta">
+                            <span>Voir les fonctionnalités</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-mockup">
+                    <div class="mockup-container">
+                        <div class="mockup-image">
+                            <div style="text-align: center; padding: 2rem;">
+                                <i class="fas fa-chart-bar" style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+                                <div>Interface de Vote en Temps Réel</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number" data-target="30000">0+</div>
+                    <div class="stat-label">Votants Supportés</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Fonctionnalités</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">0€</div>
+                    <div class="stat-label">Coût</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">8.5/10</div>
+                    <div class="stat-label">Production Ready</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pourquoi E-Voting Platform ?</h2>
+                <p class="section-subtitle">
+                    Une solution complète qui va bien au-delà du simple vote en ligne.
+                    Découvrez des fonctionnalités uniques sur le marché.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="feature-title">Sécurité Maximum</h3>
+                    <p class="feature-description">
+                        2FA, chiffrement AES-256, audit trail complet. Vos votes sont protégés
+                        selon les standards les plus stricts.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="feature-title">Notifications Temps Réel</h3>
+                    <p class="feature-description">
+                        WebSocket et Web Push pour alertes instantanées. Restez informé
+                        de chaque étape du scrutin.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Gestion du Quorum</h3>
+                    <p class="feature-description">
+                        4 types de quorum avec suivi en temps réel. Validez automatiquement
+                        vos élections selon vos règles.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="feature-title">Visioconférence Intégrée</h3>
+                    <p class="feature-description">
+                        Teams, Zoom, et plateformes personnalisées. Organisez vos AG
+                        en ligne facilement.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="feature-title">Résultats Instantanés</h3>
+                    <p class="feature-description">
+                        Dépouillement automatique avec visualisations. Exportez en CSV,
+                        Excel, PDF ou JSON.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Vote Secret & Transparent</h3>
+                    <p class="feature-description">
+                        Anonymat garanti ou vote nominatif selon vos besoins. Total contrôle
+                        sur la confidentialité.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ils nous font confiance</h2>
+                <p class="section-subtitle">
+                    Découvrez ce que disent nos utilisateurs
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Meilleure solution gratuite du marché. Simple à utiliser et ultra sécurisée.
+                        Parfait pour nos AG mensuelles !"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <strong>Jean Dupont</strong>
+                            <span>Président, Association XYZ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Open source et gratuit, c'était exactement ce qu'on cherchait.
+                        Les notifications en temps réel changent tout !"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ML</div>
+                        <div class="author-info">
+                            <strong>Marie Leblanc</strong>
+                            <span>Secrétaire, Syndicat ABC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Installation rapide, interface intuitive. Nous avons migré toutes nos
+                        élections sur cette plateforme."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PM</div>
+                        <div class="author-info">
+                            <strong>Pierre Martin</strong>
+                            <span>Directeur, Entreprise Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-proof">
+                <div class="proof-badge">
+                    <i class="fab fa-github"></i>
+                    <span>2K+ Stars</span>
+                </div>
+                <div class="proof-badge">
+                    <i class="fas fa-download"></i>
+                    <span>5K+ Downloads</span>
+                </div>
+                <div class="proof-badge">
+                    <i class="fas fa-users"></i>
+                    <span>500+ Organisations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison" id="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pourquoi passer à l'open source ?</h2>
+                <p class="section-subtitle">
+                    Comparaison avec les solutions propriétaires
+                </p>
+            </div>
+
+            <div class="comparison-container">
+                <div class="comparison-col winner">
+                    <h3 class="comparison-title">
+                        <i class="fas fa-check-circle"></i>
+                        E-Voting Platform
+                    </h3>
+                    <ul class="comparison-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span><strong>100% gratuit</strong> - Aucun coût d'utilisation</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span><strong>Open source</strong> - Code transparent</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span><strong>Auto-hébergeable</strong> - Vos données</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span><strong>Personnalisable</strong> - À vos besoins</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span><strong>Notifications RT</strong> - Unique au marché</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="comparison-col loser">
+                    <h3 class="comparison-title">
+                        <i class="fas fa-times-circle"></i>
+                        Solutions Propriétaires
+                    </h3>
+                    <ul class="comparison-list">
+                        <li>
+                            <i class="fas fa-times"></i>
+                            <span>Abonnements coûteux (€€€)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-times"></i>
+                            <span>Code fermé - Boîte noire</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-times"></i>
+                            <span>Dépendance au fournisseur</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-times"></i>
+                            <span>Limitations personnalisation</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-times"></i>
+                            <span>Fonctionnalités limitées</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Prêt à révolutionner vos scrutins ?</h2>
+                <p class="cta-subtitle">
+                    Rejoignez les organisations qui ont fait confiance à l'open source
+                    pour leurs élections. Déployez en quelques minutes.
+                </p>
+
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-cta btn-cta-white">
+                        <span>Créer mon compte gratuit</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn btn-cta btn-secondary">
+                        <i class="fab fa-github"></i>
+                        <span>Télécharger le code</span>
+                    </a>
+                </div>
+
+                <p class="cta-note">
+                    ✅ Aucune carte bancaire • ✅ Setup 3 min • ✅ Support communautaire
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>E-Voting Platform</h3>
+                    <p>Solution open source de vote électronique sécurisé, fiable et démocratique.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Produit</h4>
+                    <ul>
+                        <li><a href="#features">Fonctionnalités</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tarifs</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="#">Guide de démarrage</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="../pages/faq.html">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="../pages/legal/mentions-légales.html">Mentions légales</a></li>
+                        <li><a href="../pages/legal/confidentialité.html">Confidentialité</a></li>
+                        <li><a href="#">CGU</a></li>
+                        <li><a href="../pages/legal/securite.html">Sécurité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 E-Voting Platform. Licence MIT. Made by XRWeb</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const duration = 1500;
+            const stepTime = duration / 100;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+
+                if (target === 30000) {
+                    element.textContent = Math.floor(current).toLocaleString() + '+';
+                }
+            }, stepTime);
+        }
+
+        // Observe stats for counter animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target.getAttribute('data-target');
+                    if (target) {
+                        animateCounter(entry.target, parseInt(target));
+                        statsObserver.unobserve(entry.target);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-number[data-target]').forEach(stat => {
+            statsObserver.observe(stat);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Mobile menu toggle (basic implementation)
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileToggle.classList.toggle('active');
+            });
+        }
+
+        // Add keyboard navigation support
+        document.querySelectorAll('.btn, .nav-link').forEach(element => {
+            element.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    element.click();
+                }
+            });
+        });
+
+        // Console easter egg
+        console.log('%c🚀 E-Voting Platform - Neo-Brutalism Edition', 'font-size: 20px; font-weight: bold; color: #FF6B35;');
+        console.log('%cOpen Source • 100% Gratuit • Made with ❤️', 'font-size: 12px; color: #7B2CBF;');
+    </script>
+
+</body>
+</html>
