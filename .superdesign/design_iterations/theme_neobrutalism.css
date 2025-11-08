@@ -1,0 +1,195 @@
+/* ==========================================
+   E-VOTING PLATFORM - NEO-BRUTALISM THEME
+   Version: 1.0.0
+   Style: Bold, Vibrant, 90s-inspired
+   ========================================== */
+
+:root {
+  /* ========== COLORS ========== */
+
+  /* Background & Foreground */
+  --background: oklch(1.0000 0 0);                    /* Pure White */
+  --foreground: oklch(0 0 0);                         /* Pure Black */
+  --card: oklch(1.0000 0 0);                          /* White cards */
+  --card-foreground: oklch(0 0 0);                    /* Black text on cards */
+
+  /* Primary (Orange Vif) - Main CTA color */
+  --primary: oklch(0.6489 0.2370 26.9728);            /* Vibrant Orange #FF6B35 */
+  --primary-foreground: oklch(1.0000 0 0);            /* White text */
+  --primary-hover: oklch(0.5800 0.2500 26.9728);      /* Darker orange on hover */
+
+  /* Secondary (Electric Lime) - Accent features */
+  --secondary: oklch(0.9680 0.2110 109.7692);         /* Electric Lime #D4FF00 */
+  --secondary-foreground: oklch(0 0 0);               /* Black text */
+  --secondary-hover: oklch(0.8800 0.2200 109.7692);   /* Darker lime */
+
+  /* Accent (Purple/Magenta) - Special highlights */
+  --accent: oklch(0.5635 0.2408 260.8178);            /* Deep Purple #7B2CBF */
+  --accent-foreground: oklch(1.0000 0 0);             /* White text */
+  --accent-hover: oklch(0.4900 0.2500 260.8178);      /* Darker purple */
+
+  /* Tertiary (Hot Pink) - CTA sections */
+  --tertiary: oklch(0.5931 0.2726 328.3634);          /* Hot Pink #FF006E */
+  --tertiary-foreground: oklch(1.0000 0 0);           /* White text */
+
+  /* Success (Bright Green) */
+  --success: oklch(0.7323 0.2492 142.4953);           /* Bright Green #00FF88 */
+  --success-foreground: oklch(0 0 0);                 /* Black text */
+
+  /* Warning (Electric Yellow) */
+  --warning: oklch(0.9200 0.1900 85.0000);            /* Electric Yellow #FFD60A */
+  --warning-foreground: oklch(0 0 0);                 /* Black text */
+
+  /* Muted & Neutral */
+  --muted: oklch(0.9551 0 0);                         /* Light Gray */
+  --muted-foreground: oklch(0.3211 0 0);              /* Dark Gray text */
+
+  /* Destructive */
+  --destructive: oklch(0 0 0);                        /* Pure Black */
+  --destructive-foreground: oklch(1.0000 0 0);        /* White text */
+
+  /* Borders & Inputs */
+  --border: oklch(0 0 0);                             /* Black borders */
+  --input: oklch(0 0 0);                              /* Black input borders */
+  --ring: oklch(0.6489 0.2370 26.9728);               /* Orange focus ring */
+
+  /* Chart Colors */
+  --chart-1: oklch(0.6489 0.2370 26.9728);            /* Orange */
+  --chart-2: oklch(0.9680 0.2110 109.7692);           /* Lime */
+  --chart-3: oklch(0.5635 0.2408 260.8178);           /* Purple */
+  --chart-4: oklch(0.7323 0.2492 142.4953);           /* Green */
+  --chart-5: oklch(0.5931 0.2726 328.3634);           /* Pink */
+
+  /* Sidebar (if needed) */
+  --sidebar: oklch(0.9551 0 0);                       /* Light Gray */
+  --sidebar-foreground: oklch(0 0 0);                 /* Black */
+  --sidebar-primary: oklch(0.6489 0.2370 26.9728);    /* Orange */
+  --sidebar-primary-foreground: oklch(1.0000 0 0);    /* White */
+  --sidebar-accent: oklch(0.5635 0.2408 260.8178);    /* Purple */
+  --sidebar-accent-foreground: oklch(1.0000 0 0);     /* White */
+  --sidebar-border: oklch(0 0 0);                     /* Black */
+  --sidebar-ring: oklch(0.6489 0.2370 26.9728);       /* Orange */
+
+  /* ========== TYPOGRAPHY ========== */
+
+  /* Fonts */
+  --font-sans: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Space Grotesk', ui-serif, Georgia, serif;
+  --font-mono: 'Space Mono', 'JetBrains Mono', monospace;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.05em;
+
+  /* ========== SPACING ========== */
+
+  --spacing: 0.25rem;                                 /* 4px base unit */
+  --spacing-xs: 0.5rem;                               /* 8px */
+  --spacing-sm: 0.75rem;                              /* 12px */
+  --spacing-md: 1rem;                                 /* 16px */
+  --spacing-lg: 1.5rem;                               /* 24px */
+  --spacing-xl: 2rem;                                 /* 32px */
+  --spacing-2xl: 3rem;                                /* 48px */
+  --spacing-3xl: 4rem;                                /* 64px */
+
+  /* ========== BORDER RADIUS ========== */
+
+  --radius: 0px;                                      /* No radius - sharp corners! */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+
+  /* ========== SHADOWS (Neo-Brutalism Style) ========== */
+
+  /* Hard shadows with offset */
+  --shadow-2xs: 4px 4px 0px 0px hsl(0 0% 0% / 0.50);
+  --shadow-xs: 4px 4px 0px 0px hsl(0 0% 0% / 0.50);
+  --shadow-sm: 4px 4px 0px 0px hsl(0 0% 0% / 1.00);
+  --shadow: 6px 6px 0px 0px hsl(0 0% 0% / 1.00);
+  --shadow-md: 6px 6px 0px 0px hsl(0 0% 0% / 1.00);
+  --shadow-lg: 8px 8px 0px 0px hsl(0 0% 0% / 1.00);
+  --shadow-xl: 10px 10px 0px 0px hsl(0 0% 0% / 1.00);
+  --shadow-2xl: 12px 12px 0px 0px hsl(0 0% 0% / 1.00);
+
+  /* Colored shadows for special effects */
+  --shadow-primary: 6px 6px 0px 0px oklch(0.6489 0.2370 26.9728);    /* Orange shadow */
+  --shadow-secondary: 6px 6px 0px 0px oklch(0.9680 0.2110 109.7692); /* Lime shadow */
+  --shadow-accent: 6px 6px 0px 0px oklch(0.5635 0.2408 260.8178);    /* Purple shadow */
+  --shadow-tertiary: 6px 6px 0px 0px oklch(0.5931 0.2726 328.3634);  /* Pink shadow */
+
+  /* ========== BORDERS ========== */
+
+  --border-width: 4px;                                /* Thick borders */
+  --border-width-thin: 2px;
+  --border-width-thick: 6px;
+
+  /* ========== TRANSITIONS ========== */
+
+  --transition-fast: 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Neo-Brutalism bounce */
+  --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ========== DARK MODE (Optional) ========== */
+
+.dark {
+  --background: oklch(0.15 0 0);                      /* Almost Black */
+  --foreground: oklch(1.0000 0 0);                    /* White */
+  --card: oklch(0.20 0 0);                            /* Dark Gray */
+  --card-foreground: oklch(1.0000 0 0);               /* White */
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.70 0 0);
+  --border: oklch(1.0000 0 0);                        /* White borders in dark mode */
+  --input: oklch(1.0000 0 0);
+}
+
+/* ========== UTILITY CLASSES ========== */
+
+/* Text Colors */
+.text-primary { color: var(--primary) !important; }
+.text-secondary { color: var(--secondary) !important; }
+.text-accent { color: var(--accent) !important; }
+.text-tertiary { color: var(--tertiary) !important; }
+
+/* Background Colors */
+.bg-primary { background-color: var(--primary) !important; }
+.bg-secondary { background-color: var(--secondary) !important; }
+.bg-accent { background-color: var(--accent) !important; }
+.bg-tertiary { background-color: var(--tertiary) !important; }
+.bg-success { background-color: var(--success) !important; }
+.bg-warning { background-color: var(--warning) !important; }
+
+/* Border Colors */
+.border-black { border-color: var(--border) !important; }
+.border-primary { border-color: var(--primary) !important; }
+.border-secondary { border-color: var(--secondary) !important; }
+.border-accent { border-color: var(--accent) !important; }
+
+/* Shadows */
+.shadow-brutal { box-shadow: var(--shadow) !important; }
+.shadow-brutal-lg { box-shadow: var(--shadow-lg) !important; }
+.shadow-brutal-xl { box-shadow: var(--shadow-xl) !important; }
+.shadow-primary { box-shadow: var(--shadow-primary) !important; }
+.shadow-secondary { box-shadow: var(--shadow-secondary) !important; }
+.shadow-accent { box-shadow: var(--shadow-accent) !important; }
+
+/* Border Widths */
+.border-brutal { border-width: var(--border-width) !important; border-style: solid; }
+.border-brutal-thin { border-width: var(--border-width-thin) !important; border-style: solid; }
+.border-brutal-thick { border-width: var(--border-width-thick) !important; border-style: solid; }
+
+/* Typography */
+.font-black { font-weight: var(--font-weight-black) !important; }
+.tracking-wide { letter-spacing: var(--tracking-wide) !important; }
+.uppercase { text-transform: uppercase !important; }
