@@ -668,12 +668,14 @@ body {
 .section-title {
     font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 700;
+    text-align: center;
     color: var(--slate-900);
     margin-bottom: 1rem;
 }
 
 .section-subtitle {
     font-size: 1.25rem;
+    text-align: center;
     color: var(--slate-600);
     max-width: 48rem;
     margin: 0 auto;
@@ -1489,6 +1491,14 @@ body {
     box-shadow: 0 0 0 3px rgba(11, 87, 208, 0.1);
 }
 
+.input-help {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--slate-500);
+    margin-top: 0.25rem;
+    font-weight: 400;
+}
+
 .calculator-results {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2022,6 +2032,98 @@ body {
 }
 
 /* ==========================================
+   HOW IT WORKS SECTION
+   ========================================== */
+
+.how-it-works {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--slate-50) 0%, white 100%);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.step-card {
+    position: relative;
+    background: white;
+    border: 2px solid var(--slate-200);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-lg);
+}
+
+.step-icon {
+    margin-top: 2rem;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover .step-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.step-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 1rem;
+}
+
+.step-description {
+    color: var(--slate-600);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.cta-note {
+    margin-top: 1rem;
+    color: var(--slate-600);
+    font-size: 0.95rem;
+}
+
+/* ==========================================
    DEMO FORM SECTION
    ========================================== */
 
@@ -2205,5 +2307,26 @@ body {
     .comparison-table-wrapper {
         margin-left: -1.5rem;
         margin-right: -1.5rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .step-card {
+        padding: 2rem;
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .step-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.75rem;
     }
 }

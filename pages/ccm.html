@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.ico">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Comment ça marche ? | E-Voting Platform">
+    <meta name="description" content="Découvrez comment organiser votre vote électronique en 4 étapes simples avec E-Voting Platform. Aucune installation requise, tout se passe en ligne.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://e-voting.app/pages/ccm.html">
+    <title>Comment ça marche ? | E-Voting Platform</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Comment ça marche ? | E-Voting Platform">
+    <meta property="og:description" content="Découvrez comment organiser votre vote électronique en 4 étapes simples. Configuration en 5 minutes, aucune installation requise.">
+    <meta property="og:url" content="https://e-voting.app/pages/ccm.html">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* Animations spécifiques pour cette page */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(11, 87, 208, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(11, 87, 208, 0.6); }
+        }
+
+        .step-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .step-card:nth-child(1) { animation-delay: 0.1s; }
+        .step-card:nth-child(2) { animation-delay: 0.2s; }
+        .step-card:nth-child(3) { animation-delay: 0.3s; }
+        .step-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-connector {
+            position: absolute;
+            top: 50%;
+            right: -2.5rem;
+            width: 2.5rem;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .steps-grid {
+                position: relative;
+            }
+
+            .timeline-connector {
+                display: block;
+            }
+
+            .step-card:last-child .timeline-connector {
+                display: none;
+            }
+        }
+
+        .video-placeholder {
+            position: relative;
+            background: linear-gradient(135deg, var(--slate-100), var(--slate-200));
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+            border: 2px dashed var(--slate-300);
+        }
+
+        .video-placeholder i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .stat-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--green-50), var(--green-100));
+            color: var(--green-700);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 0.5rem;
+        }
+
+        .process-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-marker {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-lg);
+            z-index: 2;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 60px;
+            bottom: -60px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary), var(--slate-200));
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <a href="../index.html" class="logo-link">
+                    <div class="logo">
+                        <img src="../images/logo-removebg.png" alt="E-Voting Platform Logo">
+                        <div class="logo-text">
+                            <h1>E-Voting Platform</h1>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <a href="../index.html#features" class="nav-link">
+                        <i class="fas fa-star"></i>
+                        <span>Fonctionnalités</span>
+                    </a>
+                    <a href="../index.html#tarifs" class="nav-link">
+                        <i class="fas fa-euro-sign"></i>
+                        <span>Tarifs</span>
+                    </a>
+                    <a href="ccm.html" class="nav-link active">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Comment ça marche</span>
+                    </a>
+                    <div class="nav-divider"></div>
+                    <a href="./login.html" class="btn-secondary">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Connexion</span>
+                    </a>
+                    <a href="./contact.html" class="btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="../index.html#features" class="mobile-link">
+                <i class="fas fa-star"></i>
+                <span>Fonctionnalités</span>
+            </a>
+            <a href="../index.html#tarifs" class="mobile-link">
+                <i class="fas fa-euro-sign"></i>
+                <span>Tarifs</span>
+            </a>
+            <a href="ccm.html" class="mobile-link active">
+                <i class="fas fa-question-circle"></i>
+                <span>Comment ça marche</span>
+            </a>
+            <div class="mobile-menu-divider"></div>
+            <a href="./login.html" class="mobile-link-button secondary">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Connexion</span>
+            </a>
+            <a href="./contact.html" class="mobile-link-button primary">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="how-it-works" style="padding-top: 8rem; padding-bottom: 3rem;">
+        <div class="container">
+            <div class="section-header">
+                <div class="hero-badge" style="margin: 0 auto 2rem;">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Simple, Rapide, Efficace</span>
+                </div>
+                <h1 class="section-title" style="font-size: 3rem;">Comment ça marche ?</h1>
+                <p class="section-subtitle" style="font-size: 1.25rem; max-width: 800px; margin: 0 auto;">
+                    Organisez votre vote électronique en <strong>4 étapes simples</strong>.
+                    Aucune installation requise, tout se passe en ligne.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <span class="stat-highlight">
+                        <i class="fas fa-clock"></i>
+                        Configuration en 5 minutes
+                    </span>
+                    <span class="stat-highlight">
+                        <i class="fas fa-check-circle"></i>
+                        Aucune installation
+                    </span>
+                    <span class="stat-highlight">
+                        <i class="fas fa-users"></i>
+                        Support 7j/7
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Steps Section -->
+    <section class="calculator" style="padding: 3rem 0 5rem;">
+        <div class="container">
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="timeline-connector"></div>
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 class="step-title">Créez votre compte</h3>
+                    <p class="step-description">
+                        Inscrivez-vous gratuitement en 2 minutes. Créez votre première élection
+                        et configurez les paramètres : type de scrutin, quorum, dates d'ouverture/clôture.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--slate-600);">
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Inscription gratuite</li>
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Interface intuitive</li>
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Assistant de configuration</li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="timeline-connector"></div>
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="step-title">Importez vos votants</h3>
+                    <p class="step-description">
+                        Ajoutez vos votants via fichier CSV/Excel ou saisissez-les manuellement.
+                        Configurez les pouvoirs de vote et validez votre liste électorale.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--slate-600);">
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Import CSV/Excel</li>
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Gestion des pouvoirs</li>
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Validation en 1 clic</li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="timeline-connector"></div>
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3 class="step-title">Lancez le vote</h3>
+                    <p class="step-description">
+                        Les votants reçoivent automatiquement leurs codes d'accès sécurisés par email.
+                        Suivez la participation en temps réel depuis votre tableau de bord.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--slate-600);">
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Envoi automatique</li>
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Suivi temps réel</li>
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Relances automatiques</li>
+                    </ul>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="step-title">Résultats instantanés</h3>
+                    <p class="step-description">
+                        À la clôture, les résultats sont calculés automatiquement et instantanément.
+                        Exportez les procès-verbaux certifiés en PDF, Excel ou CSV.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--slate-600);">
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Dépouillement automatique</li>
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>PV certifiés</li>
+                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Exports multiples</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-container">
+                <a href="../index.html#demo-form" class="btn-cta-primary">
+                    <i class="fas fa-rocket"></i>
+                    Démarrer mon essai gratuit
+                </a>
+                <p class="cta-note">Essai 14 jours • Sans engagement • Sans carte bancaire</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Guide Section -->
+    <section class="features" style="padding: 5rem 0; background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Guide détaillé étape par étape</h2>
+                <p class="section-subtitle">
+                    Découvrez en détail chaque étape du processus de vote électronique
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Configuration -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="feature-title">Configuration de l'élection</h3>
+                    <p class="feature-description">
+                        Définissez le <strong>type de scrutin</strong> (uninominal, liste, approbation),
+                        configurez le <strong>quorum</strong> (4 types disponibles), fixez les dates et heures
+                        d'ouverture/clôture, et choisissez les options de vote (secret, pondéré, etc.).
+                    </p>
+                </div>
+
+                <!-- Import -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-import"></i>
+                    </div>
+                    <h3 class="feature-title">Import des votants</h3>
+                    <p class="feature-description">
+                        Importez vos listes électorales en <strong>CSV/Excel</strong> ou saisissez manuellement.
+                        Attribuez les pouvoirs de vote (1 voix, vote pondéré, procurations),
+                        et validez la liste définitive avant l'envoi des invitations.
+                    </p>
+                </div>
+
+                <!-- Vote -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-poll"></i>
+                    </div>
+                    <h3 class="feature-title">Déroulement du vote</h3>
+                    <p class="feature-description">
+                        Les votants reçoivent un email avec <strong>code unique</strong> et lien sécurisé.
+                        Authentification 2FA disponible. Suivez en temps réel le taux de participation,
+                        l'évolution du quorum, et recevez des <strong>alertes automatiques</strong>.
+                    </p>
+                </div>
+
+                <!-- Exports -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <h3 class="feature-title">Dépouillement et exports</h3>
+                    <p class="feature-description">
+                        Dépouillement automatique à la clôture. Génération instantanée des
+                        <strong>procès-verbaux certifiés</strong> avec signature numérique SHA-256.
+                        Exports disponibles en PDF, Excel, CSV et JSON.
+                    </p>
+                </div>
+
+                <!-- Security -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="feature-title">Sécurité maximale</h3>
+                    <p class="feature-description">
+                        Chiffrement <strong>AES-256 end-to-end</strong>, authentification 2FA avec Google Authenticator,
+                        audit trail complet et immutable, <strong>conformité RGPD</strong> garantie.
+                        Hébergement sécurisé en France.
+                    </p>
+                </div>
+
+                <!-- Support -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">Support et assistance</h3>
+                    <p class="feature-description">
+                        Documentation complète, tutoriels vidéo, support email (48h pour Starter,
+                        24h pour Pro), support téléphonique pour les plans Pro et Entreprise.
+                        <strong>Accompagnement personnalisé</strong> disponible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" style="background: var(--slate-50);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Questions fréquentes sur le processus</h2>
+                <p class="section-subtitle">Tout ce que vous devez savoir pour organiser votre vote</p>
+            </div>
+
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>
+                        <i class="fas fa-clock"></i>
+                        Combien de temps faut-il pour configurer une élection ?
+                    </summary>
+                    <p>
+                        En moyenne, <strong>5 à 10 minutes</strong> suffisent pour configurer une élection simple.
+                        Pour des scrutins plus complexes avec vote pondéré et quorum spécifique,
+                        comptez 15-20 minutes maximum. Notre assistant de configuration vous guide
+                        à chaque étape.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <i class="fas fa-flask"></i>
+                        Puis-je tester le processus avant l'élection réelle ?
+                    </summary>
+                    <p>
+                        Oui ! Vous pouvez créer des <strong>élections de test gratuitement</strong> pendant
+                        votre période d'essai de 14 jours. Testez tous les scénarios possibles
+                        sans limite : différents types de scrutin, quorum, vote pondéré, etc.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <i class="fas fa-download"></i>
+                        Les votants doivent-ils installer un logiciel ?
+                    </summary>
+                    <p>
+                        Non, <strong>absolument rien à installer</strong>. Les votants reçoivent un lien
+                        par email et votent directement depuis leur navigateur web
+                        (ordinateur, tablette ou smartphone). Compatible tous navigateurs modernes.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <i class="fas fa-users"></i>
+                        Que se passe-t-il si le quorum n'est pas atteint ?
+                    </summary>
+                    <p>
+                        Le système <strong>empêche automatiquement la clôture</strong> du vote tant que le
+                        quorum n'est pas atteint. Vous pouvez prolonger le délai de vote
+                        ou envoyer des relances automatiques aux non-votants. Des notifications
+                        vous alertent en temps réel de l'évolution du quorum.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <i class="fas fa-shield-alt"></i>
+                        Comment garantissez-vous la sécurité du vote ?
+                    </summary>
+                    <p>
+                        Nous utilisons un <strong>chiffrement AES-256</strong> pour toutes les données,
+                        une authentification 2FA optionnelle, et un système d'audit trail complet.
+                        Chaque action est tracée et horodatée. Conformité RGPD garantie et
+                        hébergement en France sur des serveurs sécurisés.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <i class="fas fa-file-pdf"></i>
+                        Les procès-verbaux sont-ils certifiés ?
+                    </summary>
+                    <p>
+                        Oui ! Tous les PV sont <strong>certifiés avec signature numérique SHA-256</strong>
+                        et horodatage. Ils incluent tous les détails du scrutin : participants,
+                        résultats détaillés, taux de participation, respect du quorum, et sont
+                        exportables en PDF sécurisé avec certificat d'authenticité.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="features" style="padding: 5rem 0; background: linear-gradient(135deg, var(--slate-50), white);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cas d'usage typiques</h2>
+                <p class="section-subtitle">
+                    Découvrez comment différentes organisations utilisent E-Voting Platform
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9);">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="feature-title">Associations</h3>
+                    <p class="feature-description">
+                        Assemblées Générales annuelles, élection du conseil d'administration,
+                        votes sur les résolutions et orientations stratégiques.
+                        <strong>Temps moyen : 10 min de config</strong>
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #F59E0B, #D97706);">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="feature-title">Copropriétés</h3>
+                    <p class="feature-description">
+                        Votes sur les travaux, élection du syndic, approbation des comptes.
+                        Gestion automatique des <strong>tantièmes et vote pondéré</strong>.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981, #059669);">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="feature-title">Entreprises</h3>
+                    <p class="feature-description">
+                        CSE, élections de délégués du personnel, sondages internes.
+                        <strong>Intégration Teams/Zoom</strong> pour AG en visioconférence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="cta-background"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Prêt à démarrer votre première élection ?</h2>
+                <p class="cta-subtitle">
+                    Essayez E-Voting Platform gratuitement pendant 14 jours.
+                    Sans engagement, sans carte bancaire.
+                </p>
+                <div class="cta-buttons">
+                    <a href="../index.html#demo-form" class="btn-cta-primary">
+                        <span>Démarrer l'essai gratuit</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="./contact.html" class="btn-cta-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Demander une démo
+                    </a>
+                </div>
+                <p class="cta-note">
+                    ✅ Configuration en 5 minutes • ✅ Aucune carte bancaire • ✅ Support inclus
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="../images/logo-removebg.png" alt="E-Voting Platform Logo" style="max-width: 50px; margin-bottom: 1rem;">
+                    <h3>E-Voting Platform</h3>
+                    <p>Solution de vote électronique sécurisé pour vos Assemblées Générales.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Produit</h4>
+                    <ul>
+                        <li><a href="../index.html#features">Fonctionnalités</a></li>
+                        <li><a href="../index.html#tarifs">Tarification</a></li>
+                        <li><a href="ccm.html">Comment ça marche</a></li>
+                        <li><a href="../index.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Entreprise</h4>
+                    <ul>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="../index.html#demo-form">Demander une démo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">CGU</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 E-Voting Platform. Tous droits réservés. Made with ❤️ by XRWeb</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="../main.js"></script>
+</body>
+</html>

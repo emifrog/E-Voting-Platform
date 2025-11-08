@@ -225,8 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==========================================
     
     console.log('%c🎨 E-Voting Platform v2.1.0', 'color: #2563eb; font-size: 20px; font-weight: bold;');
-    console.log('%c✅ Open Source | 💚 Gratuit | 🔒 Sécurisé', 'color: #16a34a; font-size: 14px;');
-    console.log('%cDécouvrez le code sur GitHub: https://github.com/your-repo', 'color: #475569; font-size: 12px;');
     
     // ==========================================
     // PERFORMANCE MONITORING (optional)
