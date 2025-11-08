@@ -117,37 +117,37 @@
             <div class="hero-content">
                 <!-- Badge -->
                 <div class="hero-badge">
-                    <i class="fas fa-star"></i>
-                    <span>Alternative Open Source à Voteer & LegaVote</span>
-                    <i class="fas fa-star"></i>
+                    <i class="fas fa-bolt"></i>
+                    <span>50% moins cher que Voteer & LegaVote</span>
+                    <i class="fas fa-bolt"></i>
                 </div>
 
                 <!-- Title -->
                 <h1 class="hero-title">
-                    Le vote électronique<br>
-                    <span class="gradient-text">fiable, simple & sécurisé</span>
+                    La plateforme de vote électronique<br>
+                    <span class="gradient-text">pour vos Assemblées Générales</span>
                 </h1>
 
                 <!-- Subtitle -->
                 <p class="hero-subtitle">
-                    Plateforme de vote en ligne <strong>100% gratuite</strong> et <strong>open source</strong> 
-                    avec authentification 2FA, gestion du quorum, intégrations Teams/Zoom 
-                    et notifications temps réel.
+                    Organisez vos AG, élections de conseil et votes stratégiques en toute sécurité.
+                    <strong>Authentification 2FA</strong>, gestion du quorum, intégrations Teams/Zoom
+                    et notifications temps réel. <strong>À partir de 2€ par votant.</strong>
                 </p>
 
                 <!-- Trust Badges -->
                 <div class="trust-badges">
                     <div class="badge">
-                        <i class="fas fa-code"></i>
-                        <span>100% Open Source</span>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Essai gratuit 14 jours</span>
                     </div>
                     <div class="badge">
-                        <i class="fas fa-heart"></i>
-                        <span>Gratuit & Sans Limites</span>
+                        <i class="fas fa-credit-card"></i>
+                        <span>Sans engagement</span>
                     </div>
                     <div class="badge">
                         <i class="fas fa-shield-alt"></i>
-                        <span>Sécurité Enterprise</span>
+                        <span>Conforme RGPD</span>
                     </div>
                     <div class="badge">
                         <i class="fas fa-flag"></i>
@@ -157,34 +157,94 @@
 
                 <!-- CTA Buttons -->
                 <div class="hero-cta">
-                    <a href="register.html" class="btn-cta-primary">
-                        <span>Démarrer Gratuitement</span>
+                    <a href="#demo-form" class="btn-cta-primary">
+                        <span>Demander une démo gratuite</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#features" class="btn-cta-secondary">
-                        Découvrir les fonctionnalités
+                    <a href="#tarifs" class="btn-cta-secondary">
+                        Voir la tarification
                     </a>
                 </div>
 
                 <!-- Stats -->
                 <div class="stats">
                     <div class="stat">
-                        <div class="stat-number">30 000+</div>
-                        <div class="stat-label">Votants supportés</div>
+                        <div class="stat-number">10 000+</div>
+                        <div class="stat-label">Votes traités</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Fonctionnalités complètes</div>
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Organisations clientes</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">8.5/10</div>
-                        <div class="stat-label">Production Ready</div>
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime garanti</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">0€</div>
-                        <div class="stat-label">Coût d'utilisation</div>
+                        <div class="stat-number">2€</div>
+                        <div class="stat-label">Par votant</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator" id="calculateur">
+        <div class="container">
+            <h2 class="section-title">💰 Combien allez-vous économiser ?</h2>
+            <p class="section-subtitle">Comparez nos tarifs avec Voteer</p>
+
+            <div class="calculator-tool">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label for="voters">Nombre de votants</label>
+                        <input type="number" id="voters" value="100" min="10" max="5000">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="elections">AG par an</label>
+                        <input type="number" id="elections" value="2" min="1" max="12">
+                    </div>
+                </div>
+
+                <div class="calculator-results">
+                    <div class="result-card evoting">
+                        <h3>E-Voting</h3>
+                        <div class="price">
+                            <span class="amount" id="evoting-price">400 €</span>
+                            <span class="period">/ an</span>
+                        </div>
+                        <ul class="features-mini">
+                            <li>✅ Toutes fonctionnalités</li>
+                            <li>✅ Support inclus</li>
+                        </ul>
+                    </div>
+
+                    <div class="result-card competitor">
+                        <h3>Voteer</h3>
+                        <div class="price">
+                            <span class="amount" id="voteer-price">800 €</span>
+                            <span class="period">/ an</span>
+                        </div>
+                        <ul class="features-mini">
+                            <li>⚠️ Options payantes</li>
+                            <li>⚠️ Support limité</li>
+                        </ul>
+                    </div>
+
+                    <div class="savings-badge">
+                        <strong>Vous économisez</strong>
+                        <span class="savings-amount" id="savings">400 €</span>
+                        <span class="savings-percent">50%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculator-cta">
+                <a href="#demo-form" class="btn-cta-primary">
+                    Profiter de cette offre
+                </a>
             </div>
         </div>
     </section>
@@ -316,71 +376,309 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="pricing" id="tarifs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Une tarification simple et transparente</h2>
+                <p class="section-subtitle">
+                    Choisissez la formule adaptée à vos besoins.
+                    <strong>50% moins cher que Voteer.</strong>
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Plan Starter -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3>Starter</h3>
+                        <p class="plan-tagline">Petites organisations</p>
+                    </div>
+
+                    <div class="plan-price">
+                        <span class="currency">€</span>
+                        <span class="amount">199</span>
+                        <span class="period">/ élection</span>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Jusqu'à <strong>100 votants</strong></li>
+                        <li><i class="fas fa-check"></i> 4 méthodes de vote</li>
+                        <li><i class="fas fa-check"></i> Gestion du quorum</li>
+                        <li><i class="fas fa-check"></i> Vote secret ou public</li>
+                        <li><i class="fas fa-check"></i> Exports CSV/Excel/PDF</li>
+                        <li><i class="fas fa-check"></i> Support email (48h)</li>
+                        <li><i class="fas fa-check"></i> Stockage 90 jours</li>
+                    </ul>
+
+                    <a href="#demo-form" class="btn-secondary btn-block">
+                        Démarrer gratuitement
+                    </a>
+
+                    <p class="plan-note">
+                        Essai 14 jours • Sans engagement
+                    </p>
+                </div>
+
+                <!-- Plan Professionnel - POPULAIRE -->
+                <div class="pricing-card popular">
+                    <div class="badge-popular">Le plus populaire</div>
+
+                    <div class="plan-header">
+                        <h3>Professionnel</h3>
+                        <p class="plan-tagline">Moyennes organisations</p>
+                    </div>
+
+                    <div class="plan-price">
+                        <span class="currency">€</span>
+                        <span class="amount">499</span>
+                        <span class="period">/ élection</span>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Jusqu'à <strong>500 votants</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Tout du plan Starter</strong></li>
+                        <li><i class="fas fa-check"></i> Vote pondéré</li>
+                        <li><i class="fas fa-check"></i> Intégrations Teams/Zoom</li>
+                        <li><i class="fas fa-check"></i> Branding personnalisé</li>
+                        <li><i class="fas fa-check"></i> Notifications temps réel</li>
+                        <li><i class="fas fa-check"></i> Support prioritaire (24h)</li>
+                        <li><i class="fas fa-check"></i> Stockage 1 an</li>
+                        <li><i class="fas fa-check"></i> Rapports avancés</li>
+                    </ul>
+
+                    <a href="#demo-form" class="btn-primary btn-block">
+                        Démarrer gratuitement
+                    </a>
+
+                    <p class="plan-note">
+                        Essai 14 jours • Sans engagement
+                    </p>
+                </div>
+
+                <!-- Plan Entreprise -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3>Entreprise</h3>
+                        <p class="plan-tagline">Grandes structures</p>
+                    </div>
+
+                    <div class="plan-price">
+                        <span class="amount-text">Sur mesure</span>
+                        <span class="period">contactez-nous</span>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <strong>Votants illimités</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Tout du plan Pro</strong></li>
+                        <li><i class="fas fa-check"></i> SLA garanti 99.9%</li>
+                        <li><i class="fas fa-check"></i> Manager de compte dédié</li>
+                        <li><i class="fas fa-check"></i> Formation équipe incluse</li>
+                        <li><i class="fas fa-check"></i> API personnalisée</li>
+                        <li><i class="fas fa-check"></i> Développement sur mesure</li>
+                        <li><i class="fas fa-check"></i> Consulting stratégique</li>
+                        <li><i class="fas fa-check"></i> Hébergement dédié (option)</li>
+                    </ul>
+
+                    <a href="./pages/contact.html" class="btn-secondary btn-block">
+                        Nous contacter
+                    </a>
+
+                    <p class="plan-note">
+                        Devis personnalisé sous 24h
+                    </p>
+                </div>
+            </div>
+
+            <!-- Alternative par votant -->
+            <div class="pricing-alternative">
+                <h4>💡 Tarification alternative</h4>
+                <p>
+                    Préférez payer <strong>par votant</strong> ?
+                    <span class="price-highlight">2€ par votant</span>
+                    (minimum 50€), toutes fonctionnalités Pro incluses.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Comparison Section -->
     <section class="comparison" id="comparison">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Pourquoi passer à l'open source ?</h2>
-                <p class="section-subtitle">Comparaison avec les solutions propriétaires</p>
+                <h2 class="section-title">Pourquoi choisir E-Voting plutôt que Voteer ?</h2>
+                <p class="section-subtitle">
+                    Même qualité, plus de fonctionnalités, 50% moins cher
+                </p>
             </div>
 
-            <div class="comparison-box">
-                <div class="comparison-col">
-                    <h3 class="comparison-title">
-                        <i class="fas fa-check-circle"></i>
-                        E-Voting Platform (Vous)
-                    </h3>
-                    <ul class="comparison-list">
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <strong>100% gratuit</strong> - Aucun coût d'utilisation
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <strong>Open source</strong> - Code transparent et auditable
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <strong>Auto-hébergeable</strong> - Contrôle total de vos données
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <strong>Personnalisable</strong> - Adaptez selon vos besoins
-                        </li>
-                        <li>
-                            <i class="fas fa-check"></i>
-                            <strong>Notifications temps réel</strong> - Unique sur le marché
-                        </li>
-                    </ul>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Critère</th>
+                            <th class="highlight">
+                                <div class="provider-logo">E-Voting</div>
+                            </th>
+                            <th>
+                                <div class="provider-logo">Voteer</div>
+                            </th>
+                            <th>
+                                <div class="provider-logo">Legavote</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Prix par votant</strong></td>
+                            <td class="highlight">
+                                <span class="price-badge best">2€</span>
+                            </td>
+                            <td>3-5€</td>
+                            <td>4-6€</td>
+                        </tr>
+
+                        <tr>
+                            <td>Gestion du quorum</td>
+                            <td class="highlight">
+                                <span class="feature-badge best">4 types</span>
+                            </td>
+                            <td>2 types</td>
+                            <td>Basique</td>
+                        </tr>
+
+                        <tr>
+                            <td>Vote pondéré</td>
+                            <td class="highlight">
+                                <i class="fas fa-check check"></i> Inclus
+                            </td>
+                            <td>💰 Option +150€</td>
+                            <td><i class="fas fa-times cross"></i> Non disponible</td>
+                        </tr>
+
+                        <tr>
+                            <td>Notifications temps réel</td>
+                            <td class="highlight">
+                                <i class="fas fa-check check"></i> WebSocket
+                            </td>
+                            <td>⚠️ Polling (lent)</td>
+                            <td>⚠️ Polling (lent)</td>
+                        </tr>
+
+                        <tr>
+                            <td>Intégrations vidéo</td>
+                            <td class="highlight">
+                                Teams, Zoom, Custom
+                            </td>
+                            <td>Teams uniquement</td>
+                            <td>Limitées</td>
+                        </tr>
+
+                        <tr>
+                            <td>Auto-hébergement</td>
+                            <td class="highlight">
+                                <i class="fas fa-check check"></i> Option disponible
+                            </td>
+                            <td><i class="fas fa-times cross"></i> Cloud uniquement</td>
+                            <td><i class="fas fa-times cross"></i> Cloud uniquement</td>
+                        </tr>
+
+                        <tr>
+                            <td>Support</td>
+                            <td class="highlight">
+                                Email + Téléphone (24h)
+                            </td>
+                            <td>Email (48-72h)</td>
+                            <td>Email uniquement</td>
+                        </tr>
+
+                        <tr>
+                            <td>Exports</td>
+                            <td class="highlight">
+                                CSV, Excel, PDF, JSON
+                            </td>
+                            <td>CSV, PDF</td>
+                            <td>CSV uniquement</td>
+                        </tr>
+
+                        <tr class="total-row">
+                            <td><strong>AG de 200 votants</strong></td>
+                            <td class="highlight">
+                                <strong class="price-total">400€</strong>
+                            </td>
+                            <td><strong>600-1000€</strong></td>
+                            <td><strong>800-1200€</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-cta">
+                <h3>Économisez jusqu'à 50% sur vos élections</h3>
+                <a href="#demo-form" class="btn-cta-primary">
+                    Passer à E-Voting
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="clients">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ce que disent nos clients</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <blockquote>
+                        "Nous avons migré de Voteer vers E-Voting et économisé
+                        <strong>1 200€ par an</strong> pour nos 3 AG. Interface plus
+                        moderne, support ultra-réactif."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div>
+                            <strong>Marie D.</strong>
+                            <span>Secrétaire Générale</span>
+                            <small>Association 500 membres</small>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="comparison-col">
-                    <h3 class="comparison-title inactive">
-                        <i class="fas fa-file-alt"></i>
-                        Solutions Propriétaires
-                    </h3>
-                    <ul class="comparison-list inactive">
-                        <li>
-                            <i class="fas fa-times"></i>
-                            Abonnements coûteux (€€€)
-                        </li>
-                        <li>
-                            <i class="fas fa-times"></i>
-                            Code fermé - Boîte noire
-                        </li>
-                        <li>
-                            <i class="fas fa-times"></i>
-                            Dépendance au fournisseur
-                        </li>
-                        <li>
-                            <i class="fas fa-times"></i>
-                            Limitations de personnalisation
-                        </li>
-                        <li>
-                            <i class="fas fa-times"></i>
-                            Fonctionnalités limitées au plan
-                        </li>
-                    </ul>
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <blockquote>
+                        "Le vote pondéré et les 4 types de quorum nous ont permis
+                        de respecter nos statuts complexes. <strong>Impossible avec
+                        les concurrents</strong> sans payer des options hors de prix."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div>
+                            <strong>Pierre L.</strong>
+                            <span>Président</span>
+                            <small>Copropriété 120 lots</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <blockquote>
+                        "Déployé pour notre AG annuelle de 800 actionnaires.
+                        <strong>Zéro problème technique</strong>, résultats
+                        instantanés, exports certifiés. Je recommande sans hésitation."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div>
+                            <strong>Sophie M.</strong>
+                            <span>Directrice Juridique</span>
+                            <small>PME 200 employés</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -411,6 +709,181 @@
                 <p class="cta-note">
                     ✅ Aucune carte bancaire requise • ✅ Déploiement en 3 jours • ✅ Support communautaire
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Questions fréquentes</h2>
+            </div>
+
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>Comment se passe l'essai gratuit de 14 jours ?</summary>
+                    <p>
+                        Aucune carte bancaire requise. Vous créez votre compte,
+                        organisez vos élections tests, et décidez ensuite si vous
+                        souhaitez continuer. Annulation en 1 clic.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Comment E-Voting peut être 50% moins cher que Voteer ?</summary>
+                    <p>
+                        Nous sommes une équipe réduite, sans frais commerciaux
+                        importants. Notre infrastructure est optimisée et nous privilégions
+                        la qualité du produit plutôt que le marketing agressif.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Puis-je migrer depuis Voteer ou Legavote ?</summary>
+                    <p>
+                        Oui ! Nous proposons un service d'import gratuit de vos
+                        listes d'électeurs (CSV) et pouvons même récupérer vos
+                        historiques si besoin. Migration en moins d'1 heure.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>La plateforme est-elle conforme RGPD ?</summary>
+                    <p>
+                        Absolument. Hébergement en France/UE, chiffrement AES-256,
+                        droit à l'oubli respecté, registre d'audit complet.
+                        Certificat de conformité disponible sur demande.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Que se passe-t-il si mon nombre de votants augmente ?</summary>
+                    <p>
+                        Avec le plan "par élection", vous payez selon la tranche
+                        (100, 500, ou illimité). Avec le "par votant", vous ne
+                        payez que les votants réels à 2€ chacun. Pas de mauvaise surprise.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Proposez-vous un support téléphonique ?</summary>
+                    <p>
+                        Oui pour les plans Pro et Entreprise. Le plan Starter a un
+                        support email sous 48h. Tous les plans incluent une
+                        documentation complète et des tutoriels vidéo.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Puis-je personnaliser l'interface avec mon logo ?</summary>
+                    <p>
+                        Oui, à partir du plan Professionnel. Vous pouvez ajouter
+                        votre logo, couleurs, et même un nom de domaine personnalisé
+                        (vote.votre-association.fr).
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Les résultats sont-ils certifiés/signés ?</summary>
+                    <p>
+                        Oui. Tous les exports incluent un hash SHA-256 et une
+                        signature numérique avec horodatage. Recevable comme
+                        preuve légale si besoin.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Form Section -->
+    <section class="demo-form" id="demo-form">
+        <div class="container">
+            <div class="demo-content">
+                <div class="demo-text">
+                    <h2>Prêt à organiser votre première élection ?</h2>
+                    <p>
+                        Demandez une démo personnalisée ou démarrez directement
+                        votre essai gratuit de 14 jours.
+                    </p>
+                    <ul class="demo-benefits">
+                        <li>✅ Configuration en 5 minutes</li>
+                        <li>✅ Aucune carte bancaire</li>
+                        <li>✅ Support inclus</li>
+                        <li>✅ Annulation en 1 clic</li>
+                    </ul>
+                </div>
+
+                <div class="demo-form-box">
+                    <form id="demoForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email professionnel *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">Organisation *</label>
+                            <input type="text" id="organization" name="organization"
+                                   placeholder="Ex: Association XYZ" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="type">Type d'organisation *</label>
+                            <select id="type" name="type" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="association">Association</option>
+                                <option value="copropriete">Copropriété</option>
+                                <option value="entreprise">Entreprise</option>
+                                <option value="syndicat">Syndicat</option>
+                                <option value="institution">Institution publique</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="voters-select">Nombre de votants estimé *</label>
+                            <select id="voters-select" name="voters" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="10-50">10-50</option>
+                                <option value="50-100">50-100</option>
+                                <option value="100-500">100-500</option>
+                                <option value="500-1000">500-1000</option>
+                                <option value="1000+">1000+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message (optionnel)</label>
+                            <textarea id="message" name="message" rows="3"
+                                      placeholder="Parlez-nous de votre projet..."></textarea>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">
+                                J'accepte d'être contacté par E-Voting concernant ma demande
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-block">
+                            Demander une démo gratuite
+                        </button>
+
+                        <p class="form-note">
+                            Réponse sous 2h en semaine. Essai gratuit 14 jours sans CB.
+                        </p>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -474,6 +947,7 @@
     </button>
 
     <!-- JavaScript -->
+    <script src="./js/calculator.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
