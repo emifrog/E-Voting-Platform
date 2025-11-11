@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inscription gratuite - E-Voting Platform">
+    <link rel="icon" href="../images/favicon.ico">
+    <title>Inscription - E-Voting Platform</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <!-- Background Pattern -->
+        <div class="login-background"></div>
+        
+        <!-- Register Box -->
+        <div class="login-box">
+            <!-- Logo/Header -->
+            <div class="login-header">
+                <a href="../index.html" class="login-logo">
+                    <div class="logo-img">
+                        <img src="../images/logo-removebg.png" alt="E-Voting Platform Logo">
+                    </div>
+                    <div class="logo-text">
+                        <h1>E-Voting Platform</h1>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Register Card -->
+            <div class="login-card">
+                <!-- Title -->
+                <div class="login-title">
+                    <h2>Créer un compte</h2>
+                    <p>Rejoignez E-Voting Platform gratuitement</p>
+                </div>
+                
+                <!-- Success Alert -->
+                <div class="alert alert-success" id="successAlert" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="successMessage"></span>
+                </div>
+                
+                <!-- Error Alert -->
+                <div class="alert alert-error" id="errorAlert" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="errorMessage"></span>
+                </div>
+                
+                <!-- Register Form -->
+                <form id="registerForm">
+                    <!-- Name Fields Row -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Prénom *</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    placeholder="Jean" 
+                                    required
+                                    autocomplete="given-name"
+                                >
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Nom *</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    placeholder="Dupont" 
+                                    required
+                                    autocomplete="family-name"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="votre@email.com" 
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+                        <p class="form-hint">
+                            <i class="fas fa-info-circle"></i>
+                            Utilisez un email professionnel ou personnel valide
+                        </p>
+                    </div>
+                    
+                    <!-- Organization Field -->
+                    <div class="form-group">
+                        <label for="organization">Organisation</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-building"></i>
+                            <input 
+                                type="text" 
+                                id="organization" 
+                                name="organization" 
+                                placeholder="Nom de votre organisation (optionnel)" 
+                                autocomplete="organization"
+                            >
+                        </div>
+                    </div>
+                    
+                    <!-- Password Field -->
+                    <div class="form-group">
+                        <label for="password">Mot de passe *</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="••••••••" 
+                                required
+                                autocomplete="new-password"
+                                minlength="8"
+                            >
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <!-- Password Strength Indicator -->
+                        <div class="password-strength" id="passwordStrength" style="display: none;">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <p class="strength-text" id="strengthText"></p>
+                        </div>
+                        <p class="form-hint">
+                            <i class="fas fa-shield-alt"></i>
+                            Minimum 8 caractères, incluant majuscules, minuscules et chiffres
+                        </p>
+                    </div>
+                    
+                    <!-- Confirm Password Field -->
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmer le mot de passe *</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="••••••••" 
+                                required
+                                autocomplete="new-password"
+                                minlength="8"
+                            >
+                            <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <p class="form-hint error-hint" id="passwordMatchHint" style="display: none;">
+                            <i class="fas fa-times-circle"></i>
+                            Les mots de passe ne correspondent pas
+                        </p>
+                    </div>
+                    
+                    <!-- Account Type -->
+                    <div class="form-group">
+                        <label>Type de compte *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="accountType" value="organizer" checked>
+                                <!--<span class="radio-custom"></span>-->
+                                <div class="radio-content">
+                                    <i class="fas fa-user-tie fa-2x register-icon"></i>
+                                    <strong>Organisateur</strong>
+                                    <small>Pour créer et gérer des scrutins</small>
+                                </div>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="accountType" value="voter">
+                                <!--<span class="radio-custom"></span>-->
+                                <div class="radio-content">
+                                    <i class="fas fa-user fa-2x register-icon"></i>
+                                    <strong>Votant</strong>
+                                    <small>Pour participer aux votes uniquement</small>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Terms & Conditions -->
+                    <div class="form-group">
+                        <label class="checkbox-label terms-checkbox">
+                            <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
+                            <span>
+                                J'accepte les 
+                                <a href="legal/cgu.html" target="_blank" class="link-primary">Conditions Générales d'Utilisation</a>
+                                et la 
+                                <a href="legal/politique-confidentialite.html" target="_blank" class="link-primary">Politique de Confidentialité</a>
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span>
+                                Je souhaite recevoir les actualités et conseils d'E-Voting Platform
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit" id="submitButton">
+                        <span id="submitText">Créer mon compte gratuit</span>
+                        <i class="fas fa-arrow-right" id="submitIcon"></i>
+                        <i class="fas fa-spinner fa-spin" id="submitLoader" style="display: none;"></i>
+                    </button>
+                </form>
+                
+                <!-- Login Link -->
+                <div class="login-footer">
+                    <p>
+                        Vous avez déjà un compte ? 
+                        <a href="login.html" class="link-primary">
+                            Se connecter
+                        </a>
+                    </p>
+                </div>
+                
+                <!-- Features List -->
+                <div class="register-features">
+                    <h4>Pourquoi rejoindre E-Voting Platform ?</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>100% gratuit</strong> - Aucun frais caché</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Sécurisé</strong> - Chiffrement AES-256 et 2FA</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Simple</strong> - Créez un scrutin en 5 minutes</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Open Source</strong> - Code transparent et auditable</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Security Badge -->
+                <div class="security-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Vos données sont protégées par chiffrement SSL/TLS</span>
+                </div>
+            </div>
+            
+            <!-- Back to Home -->
+            <div class="back-home">
+                <a href="../index.html">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Retour à l'accueil</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="../js/register.js"></script>
+</body>
+</html>

@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!votersInput || !electionsInput) return;
 
+    // Format numbers with spaces for better readability
+    function formatPrice(price) {
+        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+
     function calculatePrices() {
         const voters = parseInt(votersInput.value) || 100;
         const elections = parseInt(electionsInput.value) || 2;
@@ -22,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const savingsAmount = voteerTotal - evotingTotal;
         const savingsPercent = Math.round((savingsAmount / voteerTotal) * 100);
 
-        // Update display
-        evotingPrice.textContent = evotingTotal + ' €';
-        voteerPrice.textContent = voteerTotal + ' €';
-        savings.textContent = savingsAmount + ' €';
+        // Update display with formatted prices
+        evotingPrice.textContent = formatPrice(evotingTotal) + ' €';
+        voteerPrice.textContent = formatPrice(voteerTotal) + ' €';
+        savings.textContent = formatPrice(savingsAmount) + ' €';
 
         // Update savings percent
         const savingsPercentElement = document.querySelector('.savings-percent');
@@ -40,14 +45,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial calculation
     calculatePrices();
-
-    // Format numbers with spaces for better readability
-    function formatPrice(price) {
-        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    }
-
-    // Modifier les lignes d'affichage :
-    evotingPrice.textContent = formatPrice(evotingTotal) + ' €';
-    voteerPrice.textContent = formatPrice(voteerTotal) + ' €';
-    savings.textContent = formatPrice(savingsAmount) + ' €';
 });
