@@ -1965,9 +1965,9 @@ body {
     flex-shrink: 0;
 }
 
-.testimonial-author div {
+/*.testimonial-author div {
     flex: 1;
-}
+}*/
 
 .testimonial-author strong {
     display: block;
