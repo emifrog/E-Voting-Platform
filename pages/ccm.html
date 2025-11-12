@@ -28,145 +28,11 @@
 
     <!-- CSS Principal -->
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/ccm.css">
 
-    <style>
-        /* Animations spécifiques pour cette page */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
 
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(11, 87, 208, 0.3); }
-            50% { box-shadow: 0 0 30px rgba(11, 87, 208, 0.6); }
-        }
-
-        .step-card {
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-        }
-
-        .step-card:nth-child(1) { animation-delay: 0.1s; }
-        .step-card:nth-child(2) { animation-delay: 0.2s; }
-        .step-card:nth-child(3) { animation-delay: 0.3s; }
-        .step-card:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .timeline-connector {
-            position: absolute;
-            top: 50%;
-            right: -2.5rem;
-            width: 2.5rem;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), transparent);
-            display: none;
-        }
-
-        @media (min-width: 768px) {
-            .steps-grid {
-                position: relative;
-            }
-
-            .timeline-connector {
-                display: block;
-            }
-
-            .step-card:last-child .timeline-connector {
-                display: none;
-            }
-        }
-
-        .video-placeholder {
-            position: relative;
-            background: linear-gradient(135deg, var(--slate-100), var(--slate-200));
-            border-radius: 16px;
-            padding: 3rem;
-            text-align: center;
-            margin: 3rem 0;
-            border: 2px dashed var(--slate-300);
-        }
-
-        .video-placeholder i {
-            font-size: 4rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .stat-highlight {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, var(--green-50), var(--green-100));
-            color: var(--green-700);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-weight: 600;
-            margin: 0.5rem;
-        }
-
-        .process-timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .timeline-marker {
-            flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            box-shadow: var(--shadow-lg);
-            z-index: 2;
-        }
-
-        .timeline-content {
-            flex: 1;
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 2px solid var(--slate-200);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: 60px;
-            bottom: -60px;
-            width: 3px;
-            background: linear-gradient(180deg, var(--primary), var(--slate-200));
-        }
-
-        .timeline-item:last-child::before {
-            display: none;
-        }
-    </style>
 </head>
-<body>
+<body class="ccm-page">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
@@ -247,17 +113,17 @@
     <section class="how-it-works" style="padding-top: 8rem; padding-bottom: 3rem;">
         <div class="container">
             <div class="section-header">
-                <div class="hero-badge" style="margin: 0 auto 2rem;">
+                <div class="hero-badge" style="margin: 0 auto 2rem; display: inline-flex;">
                     <i class="fas fa-lightbulb"></i>
                     <span>Simple, Rapide, Efficace</span>
                 </div>
-                <h1 class="section-title" style="font-size: 3rem;">Comment ça marche ?</h1>
-                <p class="section-subtitle" style="font-size: 1.25rem; max-width: 800px; margin: 0 auto;">
+                <h1 class="section-title hero-title-large">Comment ça marche ?</h1>
+                <p class="section-subtitle hero-subtitle-large">
                     Organisez votre vote électronique en <strong>4 étapes simples</strong>.
                     Aucune installation requise, tout se passe en ligne.
                 </p>
 
-                <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+                <div class="stat-badges-container">
                     <span class="stat-highlight">
                         <i class="fas fa-clock"></i>
                         Configuration en 5 minutes
@@ -291,10 +157,10 @@
                         Inscrivez-vous gratuitement en 2 minutes. Créez votre première élection
                         et configurez les paramètres : type de scrutin, quorum, dates d'ouverture/clôture.
                     </p>
-                    <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--slate-600);">
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Inscription gratuite</li>
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Interface intuitive</li>
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Assistant de configuration</li>
+                    <ul class="step-list">
+                        <li><i class="fas fa-check"></i><span>Inscription gratuite</span></li>
+                        <li><i class="fas fa-check"></i><span>Interface intuitive</span></li>
+                        <li><i class="fas fa-check"></i><span>Assistant de configuration</span></li>
                     </ul>
                 </div>
 
@@ -310,10 +176,10 @@
                         Ajoutez vos votants via fichier CSV/Excel ou saisissez-les manuellement.
                         Configurez les pouvoirs de vote et validez votre liste électorale.
                     </p>
-                    <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--slate-600);">
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Import CSV/Excel</li>
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Gestion des pouvoirs</li>
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Validation en 1 clic</li>
+                    <ul class="step-list">
+                        <li><i class="fas fa-check"></i><span>Import CSV/Excel</span></li>
+                        <li><i class="fas fa-check"></i><span>Gestion des pouvoirs</span></li>
+                        <li><i class="fas fa-check"></i><span>Validation en 1 clic</span></li>
                     </ul>
                 </div>
 
@@ -329,10 +195,10 @@
                         Les votants reçoivent automatiquement leurs codes d'accès sécurisés par email.
                         Suivez la participation en temps réel depuis votre tableau de bord.
                     </p>
-                    <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--slate-600);">
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Envoi automatique</li>
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Suivi temps réel</li>
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Relances automatiques</li>
+                    <ul class="step-list">
+                        <li><i class="fas fa-check"></i><span>Envoi automatique</span></li>
+                        <li><i class="fas fa-check"></i><span>Suivi temps réel</span></li>
+                        <li><i class="fas fa-check"></i><span>Relances automatiques</span></li>
                     </ul>
                 </div>
 
@@ -347,10 +213,10 @@
                         À la clôture, les résultats sont calculés automatiquement et instantanément.
                         Exportez les procès-verbaux certifiés en PDF, Excel ou CSV.
                     </p>
-                    <ul style="list-style: none; padding: 0; margin-top: 1rem; color: var(--slate-600);">
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Dépouillement automatique</li>
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>PV certifiés</li>
-                        <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--green-600); margin-right: 0.5rem;"></i>Exports multiples</li>
+                    <ul class="step-list">
+                        <li><i class="fas fa-check"></i><span>Dépouillement automatique</span></li>
+                        <li><i class="fas fa-check"></i><span>PV certifiés</span></li>
+                        <li><i class="fas fa-check"></i><span>Exports multiples</span></li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,225 @@
+/* Animations spécifiques pour cette page */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(11, 87, 208, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(11, 87, 208, 0.6);
+    }
+}
+
+.ccm-page .step-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.ccm-page .step-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.ccm-page .step-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.ccm-page .step-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.ccm-page .step-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-connector {
+    position: absolute;
+    top: 50%;
+    right: -2.5rem;
+    width: 2.5rem;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .ccm-page .steps-grid {
+        position: relative;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline-connector {
+        display: none;
+    }
+}
+
+.stat-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    color: #047857;
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 0.5rem;
+    font-size: 0.9375rem;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-highlight:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.stat-highlight i {
+    font-size: 1rem;
+}
+
+.ccm-page .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.ccm-page .faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.ccm-page .faq-item summary i {
+    color: #0b57d0;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.ccm-page .step-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.ccm-page .step-list li {
+    padding: 0.5rem 0;
+    color: #475569;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.ccm-page .step-list li i {
+    color: #059669;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.ccm-page .hero-title-large {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .ccm-page .hero-title-large {
+        font-size: 3rem;
+    }
+}
+
+.ccm-page .hero-subtitle-large {
+    font-size: 1.125rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    color: #475569;
+}
+
+@media (min-width: 768px) {
+    .ccm-page .hero-subtitle-large {
+        font-size: 1.25rem;
+    }
+}
+
+.stat-badges-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.ccm-page .cta-container {
+    margin-top: 3rem;
+}
+
+/* Fix pour les icônes des feature cards */
+.ccm-page .feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.ccm-page .feature-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.ccm-page .feature-card:hover .feature-icon {
+    transform: scale(1.05) rotate(5deg);
+}
+
+/* Couleurs par défaut pour les feature-icons sans style inline */
+.ccm-page .features-grid .feature-card:nth-child(1) .feature-icon:not([style]) {
+    background: linear-gradient(135deg, #0b57d0, #084298);
+}
+
+.ccm-page .features-grid .feature-card:nth-child(2) .feature-icon:not([style]) {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.ccm-page .features-grid .feature-card:nth-child(3) .feature-icon:not([style]) {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.ccm-page .features-grid .feature-card:nth-child(4) .feature-icon:not([style]) {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.ccm-page .features-grid .feature-card:nth-child(5) .feature-icon:not([style]) {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.ccm-page .features-grid .feature-card:nth-child(6) .feature-icon:not([style]) {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
