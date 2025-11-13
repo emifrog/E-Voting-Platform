@@ -321,13 +321,8 @@ Chiffrement AES-256, authentification 2FA optionnelle, audit trail complet, conf
 
 ## 👨‍💻 Auteur
 
-**Made with ❤️ by XRWeb**
+**Made by XRWeb**
 
----
-
-## 📄 Licence
-
-MIT License - Ce projet reste open source
 
 ---
 
