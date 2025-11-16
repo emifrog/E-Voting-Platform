@@ -4,11 +4,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
-    
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             // Get form data
             const formData = {
                 firstName: document.getElementById('firstName').value,
@@ -20,31 +18,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: document.getElementById('message').value,
                 consent: document.getElementById('consent').checked
             };
-            
+
             // Validate form
             if (!validateForm(formData)) {
+                e.preventDefault();
                 return;
             }
-            
-            // Show loading state
+
+            // Show loading state (Formspree will handle the actual submission)
             const submitBtn = contactForm.querySelector('.btn-submit');
-            const originalContent = submitBtn.innerHTML;
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Envoi en cours...</span>';
-            
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Success
-                showNotification('Message envoyé avec succès !', 'success');
-                contactForm.reset();
-                
-                // Restore button
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalContent;
-                
-                // Log form data (for demo purposes)
-                console.log('Form submitted:', formData);
-            }, 2000);
+
+            // Don't prevent default - let Formspree handle it
+            // The form will redirect to merci.html automatically
         });
     }
     

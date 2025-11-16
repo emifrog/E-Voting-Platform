@@ -38,32 +38,24 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="nav-links">
-                    <a href="#features" class="nav-link">
+                    <a href="../index.html#features" class="nav-link">
                         <i class="fas fa-star"></i>
                         <span>Fonctionnalités</span>
                     </a>
-                    <a href="#tarifs" class="nav-link">
+                    <a href="../index.html#tarifs" class="nav-link">
                         <i class="fas fa-euro-sign"></i>
                         <span>Tarifs</span>
                     </a>
-                    <a href="#comparison" class="nav-link">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Comparaison</span>
-                    </a>
-                    <a href="../pages/ccm.html" class="nav-link">
+                    <a href="./ccm.html" class="nav-link">
                         <i class="fas fa-question-circle"></i>
                         <span>Comment ça marche</span>
                     </a>
                     <div class="nav-divider"></div>
-                    <a href="./pages/login.html" class="btn-secondary">
+                    <a href="./login.html" class="btn-secondary">
                         <i class="fas fa-sign-in-alt"></i>
                         <span>Commencer</span>
                     </a>
-                    <!--<a href="register.html" class="btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        <span>Démarrer Gratuitement</span>
-                    </a>-->
-                    <a href="./pages/contact.html" class="btn-primary">
+                    <a href="./contact.html" class="btn-primary">
                         <i class="fas fa-envelope"></i>
                         <span>Contact</span>
                     </a>
@@ -82,32 +74,24 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
-            <a href="#features" class="mobile-link">
+            <a href="../index.html#features" class="mobile-link">
                 <i class="fas fa-star"></i>
                 <span>Fonctionnalités</span>
             </a>
-            <a href="#tarifs" class="mobile-link">
+            <a href="../index.html#tarifs" class="mobile-link">
                 <i class="fas fa-euro-sign"></i>
                 <span>Tarifs</span>
             </a>
-            <a href="#comparison" class="mobile-link">
-                <i class="fas fa-chart-bar"></i>
-                <span>Comparaison</span>
-            </a>
-            <a href="../pages/ccm.html" class="mobile-link">
+            <a href="./ccm.html" class="mobile-link">
                 <i class="fas fa-question-circle"></i>
                 <span>Comment ça marche</span>
             </a>
             <div class="mobile-menu-divider"></div>
-            <a href="login.html" class="mobile-link-button secondary">
+            <a href="./login.html" class="mobile-link-button secondary">
                 <i class="fas fa-sign-in-alt"></i>
-                <span>Connexion</span>
+                <span>Commencer</span>
             </a>
-            <!--<a href="register.html" class="mobile-link-button primary">
-                <i class="fas fa-rocket"></i>
-                <span>Démarrer Gratuitement</span>
-            </a>-->
-            <a href="./pages/contact.html" class="mobile-link-button primary">
+            <a href="./contact.html" class="mobile-link-button primary">
                 <i class="fas fa-envelope"></i>
                 <span>Contact</span>
             </a>
@@ -137,7 +121,11 @@
                         <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
                     </div>
 
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/movykved" method="POST">
+                        <input type="hidden" name="_subject" value="Nouveau message depuis E-Voting Platform">
+                        <input type="hidden" name="_language" value="fr">
+                        <input type="hidden" name="_next" value="https://e-voting-platforme.fr/pages/merci.html">
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">
