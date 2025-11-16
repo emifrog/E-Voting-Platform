@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMessage = document.getElementById('errorMessage');
     const successAlert = document.getElementById('successAlert');
     const successMessage = document.getElementById('successMessage');
+    const acceptTermsCheckbox = document.getElementById('acceptTerms');
+    const termsErrorHint = document.getElementById('termsErrorHint');
 
     // Toggle Password Visibility
     togglePassword.addEventListener('click', function() {
@@ -280,5 +282,25 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('focus', function() {
             this.classList.remove('error');
         });
+    });
+
+    // Real-time Terms & Conditions validation
+    acceptTermsCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            termsErrorHint.style.display = 'none';
+            this.parentElement.classList.remove('error');
+        } else {
+            termsErrorHint.style.display = 'block';
+            this.parentElement.classList.add('error');
+        }
+    });
+
+    // Highlight terms checkbox on form submit attempt if not checked
+    submitButton.addEventListener('click', function() {
+        if (!acceptTermsCheckbox.checked) {
+            termsErrorHint.style.display = 'block';
+            acceptTermsCheckbox.parentElement.classList.add('error');
+            acceptTermsCheckbox.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     });
 });

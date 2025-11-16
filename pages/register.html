@@ -211,15 +211,20 @@
                         <label class="checkbox-label terms-checkbox">
                             <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
                             <span>
-                                J'accepte les 
+                                J'accepte les
                                 <a href="legal/cgu.html" target="_blank" class="link-primary">Conditions Générales d'Utilisation</a>
-                                et la 
+                                et la
                                 <a href="legal/politique-confidentialite.html" target="_blank" class="link-primary">Politique de Confidentialité</a>
+                                <span class="required-indicator">*</span>
                             </span>
                         </label>
+                        <p class="form-hint error-hint" id="termsErrorHint" style="display: none;">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Vous devez accepter les conditions pour créer un compte
+                        </p>
                     </div>
-                    
-                    <!-- Newsletter -->
+
+                    <!-- Newsletter
                     <div class="form-group">
                         <label class="checkbox-label">
                             <input type="checkbox" id="newsletter" name="newsletter">
@@ -227,7 +232,7 @@
                                 Je souhaite recevoir les actualités et conseils d'E-Voting Platform
                             </span>
                         </label>
-                    </div>
+                    </div> -->
                     
                     <!-- Submit Button -->
                     <button type="submit" class="btn-submit" id="submitButton">
